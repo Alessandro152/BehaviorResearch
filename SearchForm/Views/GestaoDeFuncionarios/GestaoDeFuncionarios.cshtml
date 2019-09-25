@@ -1,0 +1,46 @@
+﻿@model SearchForm.Models.ViewModels.GlobalViewModel
+@{
+    ViewBag.Title = "GestaoDeFuncionarios";
+}
+<br />
+<br />
+<div>
+    <div>
+        @if (ViewBag.Alert != string.Empty)
+        {
+            <script type="text/javascript">
+                alert('@ViewBag.Alert');
+            </script>
+        }
+        @using (Html.BeginForm("ColagemDeOrganizacaoView", "GestaoDeFuncionarios", FormMethod.Post))
+        {
+            <div>
+                <div class="QuestionTitle">
+                    <h4>Pergunta 3 - Gestão de Funcionários</h4>
+                </div>
+                <div class="q1">
+                    A - O estilo de gestão na organização é caracterizado pelo trabalho em equipe, consenso e participação
+                    @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+                <div class="q2">
+                    B - O estilo de gestão na organização é caracterizado pelo risco individual, inovação, liberdade e exclusividade
+                    @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+                <div class="q3">
+                    C - O estilo de gestão na organização é caracterizado pela competitividade, alta demanda e conquista
+                    @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+                <div class="q4">
+                    D - O estilo de gestão na organização é caracterizado pela segurança do emprego, conformidade, previsibilidade e estabilidade nos relacionamentos
+                    @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GFLetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+            </div>
+            <input class="QuestionSubmit" type="submit" value="Próximo" />
+        }
+    </div>
+</div>
+

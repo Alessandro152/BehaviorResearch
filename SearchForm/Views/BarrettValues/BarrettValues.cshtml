@@ -1,0 +1,250 @@
+﻿@model SearchForm.Models.ViewModels.BarretValues.BarretValuesViewModel
+@{
+    ViewBag.Title = "BarrettValues";
+}
+<div>
+    <div class="QuestionTitle">
+        <h4 style="margin-top: 50px;">Valores de Barrett - Abaixo segue 75 valores que você acha que deve ser aplicado na sua empresa. Destes 50, marque APENAS os 10 melhores.</h4>
+    </div>
+</div>
+<div>
+    <div>
+        @using (Html.BeginForm("FinishView", "BarrettValues"))
+        {
+            <table class="ColumnOne">
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 1 - SENSO DE DONO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 2 - ADAPTABILIDADE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 3 - SER O MELHOR</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 4 - IMAGEM DA MARCA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 5 - CUIDAR/IMPORTAR-SE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 6 - CLAREZA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 7 - COMPROMETIMENTO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 8 - COMPAIXÃO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 9 - CONFUSÃO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 10 - APRENDIZAGEM CONTÍNUA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 11 - COOPERAÇÃO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 12 - CORAGEM</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 13 - COLABORAÇÃO ENTRE GRUPOS</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 14 - COLABORAÇÃO COM O CLIENTE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 15 - CONFORTO COM INCERTEZAS</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 16 - VALORIZANDO A DIVERSIDADE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 17 - ENGAJAMENTO DOS FUNCIONÁRIOS</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 18 - SAÚDE DO FUNCIONÁRIO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 19 - EMPODERAR</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 20 - ENTUSIASMO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 21 - CONSCIÊNCIA AMBIENTAL</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 22 - ÉTICA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 23 - EXPERIÊNCIA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 24 - IMPARCIALIDADE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 25 - PERDÃO</th>
+                </tr>
+            </table>
+            <table class="ColumnTwo">
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 26 - ATINGIR OBJETIVOS</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 27 - EQUILIBRIO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 28- CULPAR</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 29 - BUROCRACIA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 30 - CAUTELA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 31 - COACHING/MENTORING</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 32 - ENVOLVIMENTO COMUNITARIO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 33 - SOLUÇÃO DE CONFLITOS</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 34 - MELHORIA CONTÍNUA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 35 - CONTROLE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 36 - REDUÇÃO DE CUSTOS</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 37 - CRIATIVIDADE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 38 - CURIOSIDADE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 39 - SATISFAÇÃO DO CLIENTE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 40 - EFICIÊNCIA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 41 - EXPANDIR PODER/DOMINAR</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 42 - REALIZAÇÃO DO FUNCIONÁRIO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 43 - RECONHECIMENTO DO FUNCIONÁRIO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 44 - ENCORAJAMENTO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 45 - EMPREENDEDORISMO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 46 - IGUALDADE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 47 - EXCELÊNCIA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 48 - EXPLORAÇÃO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 49 - ESTABILIDADE FINANCEIRA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 50 - PREOCUPAÇÃO COM FUTURAS GERAÇÕES</th>
+                </tr>
+            </table>
+            <table class="ColumnThree">
+                <tr>
+                    <th>
+                        @Html.CheckBoxFor(m => m.teste) 51 - LIDERANÇA GLOBAL
+                    </th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 52 - ORIENTADO PARA OBJETIVOS</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 53 - HIERARQUIA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 54 - PENSAMENTO HOLÍSTICO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 55 - HONESTIDADE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 56 - DIREITOS HUMANOS</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 57 - HUMOR/ALEGRIA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 58 - CAPACIDADE DE INCLUSÃO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 59 - RETER INFORMAÇÕES</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 60 - COMPARTILHAR INFORMAÇÕES</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 61 - INICIATIVA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 62 - INOVAÇÃO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 63 - INTEGRIDADE</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 64 - COMPETIÇÃO INTERNA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 65 - INSEGURANÇA DO EMPREGO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 66 - DESENVOLVIMENTO DA LIDERANÇA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 67 - LIDERANDO PELO EXEMPLO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 68 - ESCUTAR</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 69 - TRABALHO EXCESSIVO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 70 - PERSPECTIVA DE LONGO PRAZO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 71 - FAZER A DIFERENÇA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 72 - MANIPULAÇÃO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 73 - FOCO NA MISSÃO</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 74 - COMUNICAÇÃO ABERTA</th>
+                </tr>
+                <tr>
+                    <th>@Html.CheckBoxFor(m => m.teste) 75 - ABERTURA</th>
+                </tr>
+            </table>
+            <input class="QuestionSubmit" type="submit" value="Finalizar" />
+        }
+    </div>
+</div>

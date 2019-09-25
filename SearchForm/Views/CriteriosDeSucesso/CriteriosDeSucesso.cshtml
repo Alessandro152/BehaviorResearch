@@ -1,0 +1,45 @@
+﻿@model SearchForm.Models.ViewModels.GlobalViewModel
+@{
+    ViewBag.Title = "CriteriosDeSucesso";
+}
+<br />
+<br />
+<div>
+    <div>
+        @if (ViewBag.Alert != string.Empty)
+        {
+            <script type="text/javascript">
+                alert('@ViewBag.Alert');
+            </script>
+        }
+        @using (Html.BeginForm("BarrettValuesView", "CriteriosDeSucesso", FormMethod.Post))
+        {
+            <div class="QuestionForm">
+                <div class="QuestionTitle">
+                    <h4>Pergunta 6 - Critérios De Sucesso</h4>
+                </div>
+                <div class="q1">
+                    A - A organização define o sucesso com base no desenvolvimento de recursos humanos, trabalho em equipe, comprometimento dos funcionários e preocupação com as pessoas.
+                    @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+                <div class="q2">
+                    B - A organização define o sucesso com base em produtos exclusivos ou mais novos. É um líder de produto e inovador
+                    @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+                <div class="q3">
+                    C - A organização define o sucesso com base em ganhar no mercado e superar a concorrência. Liderança competitiva no mercado é fundamental
+                    @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+                <div class="q4">
+                    D - A organização define o sucesso com base na eficiência. Entrega confiável, agendamento suave e produção de baixo custo são essenciais
+                    @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+            </div>
+            <input class="QuestionSubmit" type="submit" value="Próximo" />
+        }
+    </div>
+</div>

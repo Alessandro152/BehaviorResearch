@@ -1,0 +1,47 @@
+﻿@model SearchForm.Models.ViewModels.GlobalViewModel
+
+@{
+    ViewBag.Title = "LiderancaOrganizacional";
+}
+<br />
+<br />
+<div>
+    <div>
+        @if (ViewBag.Alert != string.Empty)
+        {
+            <script type="text/javascript">
+                alert('@ViewBag.Alert');
+            </script>
+        }
+        @using (Html.BeginForm("GestaoDeFuncionariosView", "LiderancaOrganizacional", FormMethod.Post))
+        {
+            <div>
+                <div class="QuestionTitle">
+                    <h4>Pergunta 2 - Liderança Organizacional</h4>
+                </div>
+                <div class="q1">
+                    A - Geralmente, considera-se que a liderança na organização exemplifica a orientação, a facilitação ou o incentivo
+                    @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+                <div class="q2">
+                    B - Considera-se geralmente que a liderança na organização exemplifica o empreendedorismo, a inovação ou a atribuição de riscos
+                    @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+                <div class="q3">
+                    C - Geralmente, considera-se que a liderança na organização exemplifica um enfoque orientado a resultados agressivos e sem sentido
+                    @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+                <div class="q4">
+                    D - Geralmente, considera-se que a liderança na organização exemplifica a eficiência de coordenação, organização ou eficiência
+                    @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa" })
+                    @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade" })
+                </div>
+            </div>
+            <input class="QuestionSubmit" type="submit" value="Próximo" />
+        }
+    </div>
+</div>
+

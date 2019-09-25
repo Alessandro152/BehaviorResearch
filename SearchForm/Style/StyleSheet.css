@@ -1,0 +1,171 @@
+﻿body {
+    background-color: #e2e2e2;
+}
+
+.headerImage {
+    margin-left: 5%;
+    box-shadow: 10px 10px 10px #808080;
+    border-radius: 2px;
+    width: 250px;
+}
+
+.MainHeader {
+    background-color: #fff;
+    border-radius: 5px;
+    font: 19px Helvetica;
+    text-align: center center;
+    margin-top: 50px;
+    color: #808080;
+    width: 1115px;
+}
+
+.MainFieldset {
+    margin: 0px 0px 0px 0px;
+    height: 450px;
+    background-color: #B4B4B4;  
+    width: 441px;
+    border-radius: 4px;
+}
+
+.nameForm, .departmentForm, .functionForm {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    color: #484848;
+    margin: 50px 0px 0px 20px;
+    border-radius: 4px;
+    height: 48px;
+    width: 100%;
+    border: 1px solid #808080;
+}
+
+.submitMain {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    margin: 80px 0px 0px 310px;
+    text-align: center center;
+    border-radius: 4px;
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    border: transparent;
+    background-color: rgba(30,75,101, 0.75);
+}
+
+.submitMain:hover {
+    background-color: #999999;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+/*-------------Questionario-----------------*/
+
+.QuestionTitle {
+    color: #999999;
+    margin-left: auto;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.QuestionSubmit {
+    border-radius: 4px;
+    height: 40px;
+    margin: 20px 0 0 1040px;
+    width: 100px;
+    color: #fff;
+    border: transparent;
+    background-color: rgba(30,75,101, 0.75);
+}
+
+.QuestionSubmit:hover {
+    background-color: rgba(30,75,101, 0.95);
+    color: #fff;
+}
+
+.pageOneHeader {
+    font-size: 16px;
+    text-align: center center;
+    margin-top: 50px;
+    width: auto;
+    color: #808080;
+}
+
+.q1 {
+    font-size: 13px;
+    margin-left: auto;
+    border-radius: 4px;
+    background-color: #B4B4B4;
+    color: #3F4444;
+    width: auto;
+    height: 50px;
+}
+
+.q2 {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: auto;
+    border-radius: 4px;
+    background-color: #B4B4B4;
+    color: #3F4444;
+    width: auto;
+    height: 50px;
+}
+
+.q3 {
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: auto;
+    border-radius: 4px;
+    background-color: #B4B4B4;
+    color: #3F4444;
+    width: auto;
+    height: 50px;
+}
+
+.q4 {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: auto;
+    border-radius: 4px;
+    background-color: #B4B4B4;
+    color: #3F4444;
+    width: auto;
+    height: 50px;
+}
+
+.expectForm {
+    text-align: center;
+    margin: 10px 0px 0px 10px;
+    border-radius: 4px;
+    height: 30px;
+    width: 75px;
+    border: transparent;
+}
+
+.realForm {
+    text-align: center;
+    margin: 0px 0px 0px 8px;
+    border-radius: 4px;
+    height: 30px;
+    width: 75px;
+    border: transparent;
+}
+
+.ColumnOne{
+    margin-top: 10px;
+    margin-left: 5%;
+    font: 14px calibri;
+    width: 350px;
+}
+
+.ColumnTwo {
+    margin-top: -580px;
+    margin-left: 35%;
+    font: 14px calibri;
+    width: 350px;
+}
+
+.ColumnThree {
+    margin-top: -580px;
+    margin-left: 65%;
+    font: 14px calibri;
+    width: 350px;
+}
