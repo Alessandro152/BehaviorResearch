@@ -12,17 +12,97 @@ namespace SearchForm.Controllers.Principal
             return View();
         }
 
+        #region CaracteristicasDominantes
         [HttpPost]
-        public ActionResult CaracteristicasDominantesView(GlobalViewModel dados)
+        public ActionResult CaracteristicasDominantesView()
         {
+            return RedirectToAction("CaractetisticasDominantes");
+        }
 
-            TempData["Teste"] = dados;
-            TempData.Keep("Teste");
+        public ActionResult CaractetisticasDominantes()
+        {
+            ViewBag.Alert = string.Empty;
+            return View();
+        }
+        #endregion
 
-            //Repository repo = new Repository();
-            //repo.SalvarDadosPessoa(dados.Pessoa);
+        #region LiderancaOrganizacional
+        [HttpPost]
+        public ActionResult LiderancaOrganizacionalView()
+        {
+            return RedirectToAction("LiderancaOrganizacional");
+        }
 
-            return RedirectToAction("CaractetisticasDominantes", "CaractetisticasDominantes");
+        public ActionResult LiderancaOrganizacional()
+        {
+            ViewBag.Alert = string.Empty;
+            return View();
+        }
+        #endregion
+
+        #region GestaoDeFuncionarios
+        [HttpPost]
+        public ActionResult GestaoDeFuncionariosView()
+        {
+            return RedirectToAction("GestaoDeFuncionarios");
+        }
+
+        public ActionResult GestaoDeFuncionarios()
+        {
+            ViewBag.Alert = string.Empty;
+            return View();
+        }
+        #endregion
+
+        #region ColagemDeOrganizacao
+        [HttpPost]
+        public ActionResult ColagemDeOrganizacaoView()
+        {
+            return RedirectToAction("ColagemDeOrganizacao");
+        }
+
+        public ActionResult ColagemDeOrganizacao()
+        {
+            ViewBag.Alert = string.Empty;
+            return View();
+        }
+        #endregion
+
+        #region EnfaseEstrategica
+        [HttpPost]
+        public ActionResult EnfaseEstrategicaView()
+        {
+            return RedirectToAction("EnfaseEstrategica");
+        }
+
+        public ActionResult EnfaseEstrategica()
+        {
+            ViewBag.Alert = string.Empty;
+            return View();
+        }
+        #endregion
+
+        #region CriteriosDeSucesso
+        [HttpPost]
+        public ActionResult CriteriosDeSucessoView()
+        {
+            return RedirectToAction("CriteriosDeSucesso");
+        }
+
+        public ActionResult CriteriosDeSucesso()
+        {
+            ViewBag.Alert = string.Empty;
+            return View();
+        }
+        #endregion
+
+        [HttpPost]
+        public ActionResult BarrettValuesView(GlobalViewModel dados)
+        {
+            Repository repo = new Repository();
+            repo.SalvarDadosPessoa(dados.Pessoa);
+
+            return View("Index");
         }
     }
 }
