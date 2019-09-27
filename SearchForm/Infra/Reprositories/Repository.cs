@@ -140,7 +140,7 @@ namespace SearchForm.Infra.Reprositories
                 Comm.Parameters.AddWithValue("@GF_C_EXPECT", gestao.GF_LetraCExpect);
                 Comm.Parameters.AddWithValue("@GF_C_REAL", gestao.GF_LetraCReal);
                 Comm.Parameters.AddWithValue("@GF_D_EXPECT", gestao.GF_LetraDExpect);
-                Comm.Parameters.AddWithValue("@GF_D_REAL", gestao.GFLetraDReal);
+                Comm.Parameters.AddWithValue("@GF_D_REAL", gestao.GF_LetraDReal);
                 Comm.ExecuteNonQuery();
             }
             catch (Exception ex)

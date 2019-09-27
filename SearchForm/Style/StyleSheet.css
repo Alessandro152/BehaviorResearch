@@ -137,3 +137,7 @@
     font: 14px calibri;
     width: 350px;
 }
+
+.alert{
+    border-radius: 4px;
+}

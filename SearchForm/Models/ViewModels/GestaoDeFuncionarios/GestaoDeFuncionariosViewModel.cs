@@ -10,6 +10,6 @@ namespace SearchForm.Models.ViewModels.GestaoDeFuncionarios
         public string GF_LetraCExpect { get; set; }
         public string GF_LetraCReal { get; set; }
         public string GF_LetraDExpect { get; set; }
-        public string GFLetraDReal { get; set; }
+        public string GF_LetraDReal { get; set; }
     }
 }
