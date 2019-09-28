@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SearchForm.Controllers.Interface;
 using SearchForm.Models.ViewModels;
 using SearchForm.Models.ViewModels.CaracteristicasDominantes;
 using SearchForm.Models.ViewModels.ColagemDeOrganizacao;
@@ -12,12 +13,12 @@ using System.Data;
 
 namespace SearchForm.Infra.Reprositories
 {
-    public class Repository
+    public class Repository : IRepository
     {
         private MySqlConnection connect;
         public MySqlConnection DatabaseConnection { get; private set; }
 
-        internal void SalvarDadosPessoa(personViewModel pessoa)
+        public void SalvarDadosPessoa(personViewModel pessoa)
         {
             try
             {
@@ -48,7 +49,7 @@ namespace SearchForm.Infra.Reprositories
             }
         }
 
-        internal void SalvarCaracteristicasDominantes(CaracteristicasDominantesViewModel caracteristicas)
+        public void SalvarCaracteristicasDominantes(CaracteristicasDominantesViewModel caracteristicas)
         {
             try
             {
@@ -84,7 +85,7 @@ namespace SearchForm.Infra.Reprositories
             }
         }
 
-        internal void SalvarLiderancaOrganizacional(LiderancaOrganizacionalViewModel lideranca)
+        public void SalvarLiderancaOrganizacional(LiderancaOrganizacionalViewModel lideranca)
         {
             try
             {
@@ -120,7 +121,7 @@ namespace SearchForm.Infra.Reprositories
             }
         }
 
-        internal void SalvarGestaoDeFuncionarios(GestaoDeFuncionariosViewModel gestao)
+        public void SalvarGestaoDeFuncionarios(GestaoDeFuncionariosViewModel gestao)
         {
             try
             {
@@ -156,7 +157,7 @@ namespace SearchForm.Infra.Reprositories
             }
         }
 
-        internal void SalvarColagemDeOrganizacao(ColagemDeOrganizacaoViewModel colagem)
+        public void SalvarColagemDeOrganizacao(ColagemDeOrganizacaoViewModel colagem)
         {
             try
             {
@@ -192,7 +193,7 @@ namespace SearchForm.Infra.Reprositories
             }
         }
 
-        internal void SalvarEnfaseEstrategica(EnfaseEstrategicaViewModel enfase)
+        public void SalvarEnfaseEstrategica(EnfaseEstrategicaViewModel enfase)
         {
             try
             {
@@ -228,7 +229,7 @@ namespace SearchForm.Infra.Reprositories
             }
         }
 
-        internal void SalvarCriteriosDeSucesso(CriteriosDeSucessoViewModel criterios)
+        public void SalvarCriteriosDeSucesso(CriteriosDeSucessoViewModel criterios)
         {
             try
             {

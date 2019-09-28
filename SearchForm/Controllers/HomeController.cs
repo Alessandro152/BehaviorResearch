@@ -1,4 +1,5 @@
-﻿using SearchForm.Infra.Reprositories;
+﻿using SearchForm.Controllers.Interface;
+using SearchForm.Infra.Reprositories;
 using SearchForm.Models.ViewModels;
 using System.Web.Mvc;
 
@@ -7,17 +8,27 @@ namespace SearchForm.Controllers.Principal
     public class HomeController : Controller
     {
         private const string ERRO = "Dados Incorretos. Lembre-se: Um unico campo nao pode ser maior que 100 e nem a soma dos quatro campos de expectativa ou realidade pode ser maior que 100";
+        private readonly IRepository _repo;
 
-        #region CaracteristicasDominantes
+        //Construtor do controller. Ele irá instanciar apenas uma vez o repositório
+        public HomeController(IRepository repo)
+        {
+            _repo = repo;
+        }
+
+        #region PaginaPrincipal
         // GET: Home
         public ActionResult Index()
         {
             return View();
         }
+        #endregion
 
+        #region CaracteristicasDominantes
         [HttpPost]
-        public ActionResult CaracteristicasDominantesView()
+        public ActionResult CaracteristicasDominantesView(GlobalViewModel dados)
         {
+            _repo.SalvarDadosPessoa(dados.Pessoa);
             return RedirectToAction("CaractetisticasDominantes");
         }
 
@@ -41,8 +52,7 @@ namespace SearchForm.Controllers.Principal
             }
             else
             {
-                Repository repo = new Repository();
-                repo.SalvarCaracteristicasDominantes(dados.CaracteristicasDominantes);
+                _repo.SalvarCaracteristicasDominantes(dados.CaracteristicasDominantes);
                 return RedirectToAction("LiderancaOrganizacional");
             }
         }
@@ -67,8 +77,7 @@ namespace SearchForm.Controllers.Principal
             }
             else
             {
-                Repository repo = new Repository();
-                repo.SalvarLiderancaOrganizacional(dados.LiderancaOrganizacional);
+                _repo.SalvarLiderancaOrganizacional(dados.LiderancaOrganizacional);
                 return RedirectToAction("GestaoDeFuncionarios");
             }
         }
@@ -93,6 +102,7 @@ namespace SearchForm.Controllers.Principal
             }
             else
             {
+                _repo.SalvarGestaoDeFuncionarios(dados.GestaoDeFuncionarios);
                 return RedirectToAction("ColagemDeOrganizacao");
             }
         }
@@ -106,9 +116,20 @@ namespace SearchForm.Controllers.Principal
 
         #region EnfaseEstrategica
         [HttpPost]
-        public ActionResult EnfaseEstrategicaView()
+        public ActionResult EnfaseEstrategicaView(GlobalViewModel dados)
         {
-            return RedirectToAction("EnfaseEstrategica");
+            bool HasSumError = VerificarCampos(dados);
+
+            if (HasSumError)
+            {
+                ViewBag.Alert = ERRO;
+                return View("ColagemDeOrganizacao");
+            }
+            else
+            {
+                _repo.SalvarColagemDeOrganizacao(dados.ColagemDeOrganizacao);
+                return RedirectToAction("EnfaseEstrategica");
+            }
         }
 
         public ActionResult EnfaseEstrategica()
@@ -131,6 +152,7 @@ namespace SearchForm.Controllers.Principal
             }
             else
             {
+                _repo.SalvarEnfaseEstrategica(dados.EnfaseEstrategica);
                 return RedirectToAction("CriteriosDeSucesso");
             }
         }
@@ -146,13 +168,22 @@ namespace SearchForm.Controllers.Principal
         [HttpPost]
         public ActionResult BarrettValuesView(GlobalViewModel dados)
         {
-            Repository repo = new Repository();
-            repo.SalvarDadosPessoa(dados.Pessoa);
+            bool HasSumError = VerificarCampos(dados);
 
-            return View("Index");
+            if (HasSumError)
+            {
+                ViewBag.Alert = ERRO;
+                return View("CriteriosDeSucesso");
+            }
+            else
+            {
+                _repo.SalvarCriteriosDeSucesso(dados.CriteriosDeSucesso);
+                return RedirectToAction("Index");
+            }
         }
         #endregion
 
+        //Metodo que converte os campos em inteiro para fazer o calculo.
         private bool VerificarCampos(GlobalViewModel dados)
         {
             if (dados.CaracteristicasDominantes != null)
@@ -236,6 +267,7 @@ namespace SearchForm.Controllers.Principal
             return false;
         }
 
+        //Soma os campos EXPECTATIVA e REALIDADE. Se ultrapassar em 100, retorna alerta ao usuário de que está errado.
         private bool SomarValores(int LetraAExpect, int LetraAReal, int LetraBExpect, int LetraBReal, int LetraCExpect, int LetraCReal, int LetraDExpect, int LetraDReal)
         {
             if (LetraAExpect > 100 || LetraAReal > 100 || LetraBExpect > 100 || LetraBReal > 100 || LetraCExpect > 100 || LetraCReal > 100 || LetraDExpect > 100 || LetraDReal > 100)
