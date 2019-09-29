@@ -131,7 +131,6 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Interface\IRepository.cs" />
-    <Compile Include="Controllers\LastPage\LastPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -162,7 +161,7 @@
     <Content Include="Views\Home\EnfaseEstrategica.cshtml" />
     <Content Include="Views\Home\CriteriosDeSucesso.cshtml" />
     <Content Include="Views\Home\BarrettValues.cshtml" />
-    <Content Include="Views\LastPage\Finish.cshtml" />
+    <Content Include="Views\Home\Finish.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

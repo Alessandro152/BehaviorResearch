@@ -10,9 +10,9 @@
         <div>
             @using (Html.BeginForm("CaracteristicasDominantesView", "Home", FormMethod.Post))
             {
-                @Html.TextBoxFor(m => m.Pessoa.Nome, new { @class = "nameForm", @required = "required", placeholder = "Nome Completo" })
-                @Html.TextBoxFor(m => m.Pessoa.Departamento, new{ @class = "departmentForm", @required = "required", placeholder = "Departamento / Àrea" })
-                @Html.TextBoxFor(m => m.Pessoa.Cargo, new { @class = "functionForm", @required = "required", placeholder = "Cargo" })
+                @Html.TextBoxFor(m => m.Pessoa.Nome, new { @class = "nameForm", @required = "required", placeholder = "Nome Completo", autocomplete="off" })
+                @Html.TextBoxFor(m => m.Pessoa.Departamento, new{ @class = "departmentForm", @required = "required", placeholder = "Departamento / Àrea", autocomplete="off" })
+                @Html.TextBoxFor(m => m.Pessoa.Cargo, new { @class = "functionForm", @required = "required", placeholder = "Cargo", autocomplete="off" })
                 <br />
                 <input class="submitMain" type="submit" value="Próximo" />
             }

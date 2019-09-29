@@ -177,10 +177,17 @@ namespace SearchForm.Controllers.Principal
             else
             {
                 _repo.SalvarCriteriosDeSucesso(dados.CriteriosDeSucesso);
-                return RedirectToAction("Index");
+                return RedirectToAction("Finish");
             }
         }
+
+        public ActionResult Finish()
+        {
+            return View();
+        }
         #endregion
+
+
 
         //Metodo que converte os campos em inteiro para fazer o calculo.
         private bool VerificarCampos(GlobalViewModel dados)
@@ -273,7 +280,7 @@ namespace SearchForm.Controllers.Principal
             {
                 return true;
             }
-            else if ((LetraAExpect + LetraBExpect + LetraCExpect + LetraDExpect > 100) || (LetraAReal + LetraBReal + LetraCReal + LetraDReal > 100))
+            else if ((LetraAExpect + LetraBExpect + LetraCExpect + LetraDExpect > 100 || LetraAExpect + LetraBExpect + LetraCExpect + LetraDExpect < 100) || (LetraAReal + LetraBReal + LetraCReal + LetraDReal > 100 || LetraAReal + LetraBReal + LetraCReal + LetraDReal < 100))
             {
                 return true;
             }
