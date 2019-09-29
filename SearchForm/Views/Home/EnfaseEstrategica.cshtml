@@ -20,24 +20,48 @@
                 </div>
                 <div class="q1">
                     A - A organização enfatiza o desenvolvimento humano. Alta confiança, abertura e participação persistem
-                    @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete="off" })
-                    @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete="off" })
                 </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
                 <div class="q2">
                     B - A organização enfatiza a aquisição de novos recursos e a criação de novos desafios. Experimentar coisas novas e prospecção de oportunidades são valorizadas
-                    @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete="off" })
-                    @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete="off" })
                 </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
                 <div class="q3">
                     C - A organização enfatiza ações e realizações competitivas. Atingir alvos esticados e ganhar no mercado são dominantes
-                    @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete="off" })
-                    @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete="off" })
                 </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
                 <div class="q4">
                     D - A organização enfatiza permanência e estabilidade. Eficiência, controle e operações suaves são importantes
-                    @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete="off" })
-                    @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete="off" })
                 </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
             </div>
             <input class="QuestionSubmit" type="submit" value="Próximo" />
         }
