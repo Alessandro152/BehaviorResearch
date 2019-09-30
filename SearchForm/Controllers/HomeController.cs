@@ -192,81 +192,90 @@ namespace SearchForm.Controllers.Principal
         //Metodo que converte os campos em inteiro para fazer o calculo.
         private bool VerificarCampos(GlobalViewModel dados)
         {
+            int LetraAExpect;
+            int LetraAReal;
+            int LetraBExpect;
+            int LetraBReal;
+            int LetraCExpect;
+            int LetraCReal;
+            int LetraDExpect;
+            int LetraDReal;
+
             if (dados.CaracteristicasDominantes != null)
             {
-                int LetraAExpect = int.Parse(dados.CaracteristicasDominantes.CD_LetraAExpect);
-                int LetraAReal = int.Parse(dados.CaracteristicasDominantes.CD_LetraAReal);
-                int LetraBExpect = int.Parse(dados.CaracteristicasDominantes.CD_LetraBExpect);
-                int LetraBReal = int.Parse(dados.CaracteristicasDominantes.CD_LetraBReal);
-                int LetraCExpect = int.Parse(dados.CaracteristicasDominantes.CD_LetraCExpect);
-                int LetraCReal = int.Parse(dados.CaracteristicasDominantes.CD_LetraCReal);
-                int LetraDExpect = int.Parse(dados.CaracteristicasDominantes.CD_LetraDExpect);
-                int LetraDReal = int.Parse(dados.CaracteristicasDominantes.CD_LetraDReal);
+                int.TryParse(dados.CaracteristicasDominantes.CD_LetraAExpect, out LetraAExpect);
+                int.TryParse(dados.CaracteristicasDominantes.CD_LetraAReal, out LetraAReal);
+                int.TryParse(dados.CaracteristicasDominantes.CD_LetraBExpect, out LetraBExpect);
+                int.TryParse(dados.CaracteristicasDominantes.CD_LetraBReal, out LetraBReal);
+                int.TryParse(dados.CaracteristicasDominantes.CD_LetraCExpect, out LetraCExpect);
+                int.TryParse(dados.CaracteristicasDominantes.CD_LetraCReal, out LetraCReal);
+                int.TryParse(dados.CaracteristicasDominantes.CD_LetraDExpect, out LetraDExpect);
+                int.TryParse(dados.CaracteristicasDominantes.CD_LetraDReal, out LetraDReal);
 
                 return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
             }
             else if (dados.LiderancaOrganizacional != null)
             {
-                int LetraAExpect = int.Parse(dados.LiderancaOrganizacional.LO_LetraAExpect);
-                int LetraAReal = int.Parse(dados.LiderancaOrganizacional.LO_LetraAReal);
-                int LetraBExpect = int.Parse(dados.LiderancaOrganizacional.LO_LetraBExpect);
-                int LetraBReal = int.Parse(dados.LiderancaOrganizacional.LO_LetraBReal);
-                int LetraCExpect = int.Parse(dados.LiderancaOrganizacional.LO_LetraCExpect);
-                int LetraCReal = int.Parse(dados.LiderancaOrganizacional.LO_LetraCReal);
-                int LetraDExpect = int.Parse(dados.LiderancaOrganizacional.LO_LetraDExpect);
-                int LetraDReal = int.Parse(dados.LiderancaOrganizacional.LO_LetraDReal);
+                int.TryParse(dados.LiderancaOrganizacional.LO_LetraAExpect, out LetraAExpect);
+                int.TryParse(dados.LiderancaOrganizacional.LO_LetraAReal, out LetraAReal);
+                int.TryParse(dados.LiderancaOrganizacional.LO_LetraBExpect, out LetraBExpect);
+                int.TryParse(dados.LiderancaOrganizacional.LO_LetraBReal, out LetraBReal);
+                int.TryParse(dados.LiderancaOrganizacional.LO_LetraCExpect, out LetraCExpect);
+                int.TryParse(dados.LiderancaOrganizacional.LO_LetraCReal, out LetraCReal);
+                int.TryParse(dados.LiderancaOrganizacional.LO_LetraDExpect, out LetraDExpect);
+                int.TryParse(dados.LiderancaOrganizacional.LO_LetraDReal, out LetraDReal);
 
                 return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
             }
             else if (dados.GestaoDeFuncionarios != null)
             {
-                int LetraAExpect = int.Parse(dados.GestaoDeFuncionarios.GF_LetraAExpect);
-                int LetraAReal = int.Parse(dados.GestaoDeFuncionarios.GF_LetraAReal);
-                int LetraBExpect = int.Parse(dados.GestaoDeFuncionarios.GF_LetraBExpect);
-                int LetraBReal = int.Parse(dados.GestaoDeFuncionarios.GF_LetraBReal);
-                int LetraCExpect = int.Parse(dados.GestaoDeFuncionarios.GF_LetraCExpect);
-                int LetraCReal = int.Parse(dados.GestaoDeFuncionarios.GF_LetraCReal);
-                int LetraDExpect = int.Parse(dados.GestaoDeFuncionarios.GF_LetraDExpect);
-                int LetraDReal = int.Parse(dados.GestaoDeFuncionarios.GF_LetraDReal);
+                int.TryParse(dados.GestaoDeFuncionarios.GF_LetraAExpect, out LetraAExpect);
+                int.TryParse(dados.GestaoDeFuncionarios.GF_LetraAReal, out LetraAReal);
+                int.TryParse(dados.GestaoDeFuncionarios.GF_LetraBExpect, out LetraBExpect);
+                int.TryParse(dados.GestaoDeFuncionarios.GF_LetraBReal, out LetraBReal);
+                int.TryParse(dados.GestaoDeFuncionarios.GF_LetraCExpect, out LetraCExpect);
+                int.TryParse(dados.GestaoDeFuncionarios.GF_LetraCReal, out LetraCReal);
+                int.TryParse(dados.GestaoDeFuncionarios.GF_LetraDExpect, out LetraDExpect);
+                int.TryParse(dados.GestaoDeFuncionarios.GF_LetraDReal, out LetraDReal);
 
                 return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
             }
             else if (dados.ColagemDeOrganizacao != null)
             {
-                int LetraAExpect = int.Parse(dados.ColagemDeOrganizacao.CO_LetraAExpect);
-                int LetraAReal = int.Parse(dados.ColagemDeOrganizacao.CO_LetraAReal);
-                int LetraBExpect = int.Parse(dados.ColagemDeOrganizacao.CO_LetraBExpect);
-                int LetraBReal = int.Parse(dados.ColagemDeOrganizacao.CO_LetraBReal);
-                int LetraCExpect = int.Parse(dados.ColagemDeOrganizacao.CO_LetraCExpect);
-                int LetraCReal = int.Parse(dados.ColagemDeOrganizacao.CO_LetraCReal);
-                int LetraDExpect = int.Parse(dados.ColagemDeOrganizacao.CO_LetraDExpect);
-                int LetraDReal = int.Parse(dados.ColagemDeOrganizacao.CO_LetraDReal);
+                int.TryParse(dados.ColagemDeOrganizacao.CO_LetraAExpect, out LetraAExpect);
+                int.TryParse(dados.ColagemDeOrganizacao.CO_LetraAReal, out LetraAReal);
+                int.TryParse(dados.ColagemDeOrganizacao.CO_LetraBExpect, out LetraBExpect);
+                int.TryParse(dados.ColagemDeOrganizacao.CO_LetraBReal, out LetraBReal);
+                int.TryParse(dados.ColagemDeOrganizacao.CO_LetraCExpect, out LetraCExpect);
+                int.TryParse(dados.ColagemDeOrganizacao.CO_LetraCReal, out LetraCReal);
+                int.TryParse(dados.ColagemDeOrganizacao.CO_LetraDExpect, out LetraDExpect);
+                int.TryParse(dados.ColagemDeOrganizacao.CO_LetraDReal, out LetraDReal);
 
                 return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
             }
             else if (dados.EnfaseEstrategica != null)
             {
-                int LetraAExpect = int.Parse(dados.EnfaseEstrategica.EE_LetraAExpect);
-                int LetraAReal = int.Parse(dados.EnfaseEstrategica.EE_LetraAReal);
-                int LetraBExpect = int.Parse(dados.EnfaseEstrategica.EE_LetraBExpect);
-                int LetraBReal = int.Parse(dados.EnfaseEstrategica.EE_LetraBReal);
-                int LetraCExpect = int.Parse(dados.EnfaseEstrategica.EE_LetraCExpect);
-                int LetraCReal = int.Parse(dados.EnfaseEstrategica.EE_LetraCReal);
-                int LetraDExpect = int.Parse(dados.EnfaseEstrategica.EE_LetraDExpect);
-                int LetraDReal = int.Parse(dados.EnfaseEstrategica.EE_LetraDReal);
+                int.TryParse(dados.EnfaseEstrategica.EE_LetraAExpect, out LetraAExpect);
+                int.TryParse(dados.EnfaseEstrategica.EE_LetraAReal, out LetraAReal);
+                int.TryParse(dados.EnfaseEstrategica.EE_LetraBExpect, out LetraBExpect);
+                int.TryParse(dados.EnfaseEstrategica.EE_LetraBReal, out LetraBReal);
+                int.TryParse(dados.EnfaseEstrategica.EE_LetraCExpect, out LetraCExpect);
+                int.TryParse(dados.EnfaseEstrategica.EE_LetraCReal, out LetraCReal);
+                int.TryParse(dados.EnfaseEstrategica.EE_LetraDExpect, out LetraDExpect);
+                int.TryParse(dados.EnfaseEstrategica.EE_LetraDReal, out LetraDReal);
 
                 return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
             }
             else if (dados.CriteriosDeSucesso != null)
             {
-                int LetraAExpect = int.Parse(dados.CriteriosDeSucesso.CS_LetraAExpect);
-                int LetraAReal = int.Parse(dados.CriteriosDeSucesso.CS_LetraAReal);
-                int LetraBExpect = int.Parse(dados.CriteriosDeSucesso.CS_LetraBExpect);
-                int LetraBReal = int.Parse(dados.CriteriosDeSucesso.CS_LetraBReal);
-                int LetraCExpect = int.Parse(dados.CriteriosDeSucesso.CS_LetraCExpect);
-                int LetraCReal = int.Parse(dados.CriteriosDeSucesso.CS_LetraCReal);
-                int LetraDExpect = int.Parse(dados.CriteriosDeSucesso.CS_LetraDExpect);
-                int LetraDReal = int.Parse(dados.CriteriosDeSucesso.CS_LetraDReal);
+                int.TryParse(dados.CriteriosDeSucesso.CS_LetraAExpect, out LetraAExpect);
+                int.TryParse(dados.CriteriosDeSucesso.CS_LetraAReal, out LetraAReal);
+                int.TryParse(dados.CriteriosDeSucesso.CS_LetraBExpect, out LetraBExpect);
+                int.TryParse(dados.CriteriosDeSucesso.CS_LetraBReal, out LetraBReal);
+                int.TryParse(dados.CriteriosDeSucesso.CS_LetraCExpect, out LetraCExpect);
+                int.TryParse(dados.CriteriosDeSucesso.CS_LetraCReal, out LetraCReal);
+                int.TryParse(dados.CriteriosDeSucesso.CS_LetraDExpect, out LetraDExpect);
+                int.TryParse(dados.CriteriosDeSucesso.CS_LetraDReal, out LetraDReal);
 
                 return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
             }
