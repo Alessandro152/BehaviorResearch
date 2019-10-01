@@ -68,7 +68,7 @@
 .QuestionSubmit {
     border-radius: 4px;
     height: 40px;
-    margin: 20px 0 0 1040px;
+    margin: 20px 0 0 1020px;
     width: 100px;
     color: #fff;
     border: transparent;
@@ -91,21 +91,21 @@
 .q1, .q2, .q3, .q4 {
     font-size: 12px;
     margin-top: 20px;
-    margin-left: auto;
+    margin-left: 0%;
     border-radius: 4px;
     background-color: #B4B4B4;
     color: #3F4444;
-    width: 100%;
+    width: 95%;
     height: 40px;
 }
 
 .expectForm {
-    font-size: 11px;
+    font-size: 10px;
     text-align: center;
     border-radius: 3px;
     height: 30px;
     width: 70px;
-    border: transparent;
+    border: 1px solid #e2e2e2;
 }
 
 .realForm {
@@ -115,7 +115,7 @@
     border-radius: 3px;
     height: 30px;
     width: 70px;
-    border: transparent;
+    border: 1px solid #e2e2e2;
 }
 
 .ColumnOne{
@@ -139,7 +139,7 @@
     width: 350px;
 }
 
-.TextBox{
+.TextBox {
     margin-top: -36px;
     margin-left: 85%;
 }
