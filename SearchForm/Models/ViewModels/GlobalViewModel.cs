@@ -1,4 +1,5 @@
-﻿using SearchForm.Models.ViewModels.CaracteristicasDominantes;
+﻿using SearchForm.Models.ViewModels.BarrettValues;
+using SearchForm.Models.ViewModels.CaracteristicasDominantes;
 using SearchForm.Models.ViewModels.ColagemDeOrganizacao;
 using SearchForm.Models.ViewModels.CriteriosDeSucesso;
 using SearchForm.Models.ViewModels.EnfaseEstrategica;
@@ -16,5 +17,6 @@ namespace SearchForm.Models.ViewModels
         public EnfaseEstrategicaViewModel EnfaseEstrategica { get; set; }
         public CriteriosDeSucessoViewModel CriteriosDeSucesso { get; set; }
         public GestaoDeFuncionariosViewModel GestaoDeFuncionarios { get; set; }
+        public BarrettValuesViewModel BarrettValues { get; set; }
     }
 }

@@ -135,7 +135,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infra\Reprositories\Repository.cs" />
-    <Compile Include="Models\ViewModels\BarretValues\BarretValuesViewModel.cs" />
+    <Compile Include="Models\ViewModels\BarretValues\BarrettValuesViewModel.cs" />
     <Compile Include="Models\ViewModels\GlobalViewModel.cs" />
     <Compile Include="Models\ViewModels\Home\personViewModel.cs" />
     <Compile Include="Models\ViewModels\CaracteristicasDominantes\CaracteristicasDominantesViewModel.cs" />
@@ -171,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

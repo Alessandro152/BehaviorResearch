@@ -22,7 +22,7 @@
 .MainFieldset {
     margin: 0px 0px 0px 0px;
     height: 450px;
-    background-color: #B4B4B4;  
+    background-color: #B4B4B4;
     width: 441px;
     border-radius: 4px;
 }
@@ -58,17 +58,19 @@
 /*-------------Questionario-----------------*/
 
 .QuestionTitle {
-    color: #999999;
-    margin-left: auto;
+    font: bold 18px Helvetica, sans-serif;
+    color: #373A36;
+    margin-left: 0%;
     background-color: #fff;
-    border-radius: 4px;
-    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
 }
 
 .QuestionSubmit {
     border-radius: 4px;
     height: 40px;
-    margin: 20px 0 0 1020px;
+    margin: 20px 0 0 90%;
     width: 100px;
     color: #fff;
     border: transparent;
@@ -81,7 +83,7 @@
 }
 
 .pageOneHeader {
-    font-size: 16px;
+    font: 16px Helvetica, sans-serif;
     text-align: center center;
     margin-top: 50px;
     width: auto;
@@ -89,18 +91,17 @@
 }
 
 .q1, .q2, .q3, .q4 {
-    font-size: 12px;
-    margin-top: 20px;
-    margin-left: 0%;
-    border-radius: 4px;
+    font: 12px Helvetica, sans-serif;
+    margin: 20px 0px 0px 0%;
+    border-radius: 5px;
     background-color: #B4B4B4;
-    color: #3F4444;
+    color: #373A36;
     width: 95%;
     height: 40px;
 }
 
 .expectForm {
-    font-size: 10px;
+    font: 10px Helvetica, sans-serif;
     text-align: center;
     border-radius: 3px;
     height: 30px;
@@ -109,7 +110,7 @@
 }
 
 .realForm {
-    font-size: 10px;
+    font: 10px Helvetica, sans-serif;
     text-align: center;
     margin-left: 5px;
     border-radius: 3px;
@@ -118,28 +119,37 @@
     border: 1px solid #e2e2e2;
 }
 
-.ColumnOne{
-    margin-top: 10px;
-    margin-left: 5%;
-    font: 14px calibri;
-    width: 350px;
+.ColumnOne {
+    background-color: #B4B4B4;
+    margin: 5% 0px 0px 5%;
+    font: 14px Helvetica, sans-serif;
+    width: 340px;
+    border-radius: 4px;
 }
 
 .ColumnTwo {
-    margin-top: -580px;
-    margin-left: 35%;
-    font: 14px calibri;
-    width: 350px;
+    margin: -49% 0px 0px 35%;
+    font: 14px Helvetica, sans-serif;
+    width: 340px;
 }
 
 .ColumnThree {
-    margin-top: -580px;
-    margin-left: 65%;
-    font: 14px calibri;
-    width: 350px;
+    margin: -50% 0px 0px 65%;
+    font: 14px Helvetica, sans-serif;
+    width: 340px;
+    border-radius: 4px;
+    background-color: #B4B4B4;
 }
 
 .TextBox {
-    margin-top: -36px;
-    margin-left: 85%;
+    margin: -36px 0px 0px 85%;
+}
+
+.ImageExemple {
+    margin: 0% 0px 0px 0%;
+    height: 100px;
+}
+.ImageExemple:hover {
+    margin: 0% 0px 0px 0%;
+    height: 500px;
 }

@@ -177,17 +177,24 @@ namespace SearchForm.Controllers.Principal
             else
             {
                 _repo.SalvarCriteriosDeSucesso(dados.CriteriosDeSucesso);
-                return RedirectToAction("Finish");
+                return RedirectToAction("BarrettValues");
             }
-        }
-
-        public ActionResult Finish()
-        {
-            return View();
         }
         #endregion
 
+        #region BarrettValues
+        public ActionResult BarrettValues()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult FinishView(GlobalViewModel dados)
+        {
+            _repo.SalvarBarrettValues(dados.BarrettValues);
+            return View();
+        }
+        #endregion
 
         //Metodo que converte os campos em inteiro para fazer o calculo.
         private bool VerificarCampos(GlobalViewModel dados)

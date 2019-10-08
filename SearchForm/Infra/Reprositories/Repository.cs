@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using SearchForm.Controllers.Interface;
 using SearchForm.Models.ViewModels;
+using SearchForm.Models.ViewModels.BarrettValues;
 using SearchForm.Models.ViewModels.CaracteristicasDominantes;
 using SearchForm.Models.ViewModels.ColagemDeOrganizacao;
 using SearchForm.Models.ViewModels.CriteriosDeSucesso;
@@ -250,6 +251,125 @@ namespace SearchForm.Infra.Reprositories
                 Comm.Parameters.AddWithValue("@CS_C_REAL", criterios.CS_LetraCReal);
                 Comm.Parameters.AddWithValue("@CS_D_EXPECT", criterios.CS_LetraDExpect);
                 Comm.Parameters.AddWithValue("@CS_D_REAL", criterios.CS_LetraDReal);
+                Comm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (DatabaseConnection.State == ConnectionState.Open)
+                {
+                    DatabaseConnection.Close();
+                }
+            }
+        }
+
+        public void SalvarBarrettValues(BarrettValuesViewModel valores)
+        {
+            try
+            {
+                MySqlCommand Comm;
+                DatabaseConnection = conexaoBanco();
+
+                Comm = DatabaseConnection.CreateCommand();
+
+                Comm.CommandText = "USE FORMULARIO";
+                Comm.ExecuteNonQuery();
+
+                Comm.CommandText = "INSERT INTO BARRETTVALUES(SENSO_DE_DONO, ATINGIR_OBJETIVOS, ADAPTABILIDADE, EQUILIBRIO, SER_O_MELHOR, CULPAR, IMAGEM_DA_MARCA, BUROCRACIA, IMPORTAR_SE, CAUTELA," +
+                    "CLAREZA, COACHING, COMPROMETIMENTO, ENVOLVIMENTO_COMUNITARIO, COMPAIXAO, SOLUCAO_DE_CONFLITOS, CONFUSAO, MELHORIA_CONTINUA, APRENDIZAGEM_CONTINUA, CONTROLE, " +
+                    "COOPERACAO, REDUCAO_DE_CUSTOS, CORAGEM, CRIATIVIDADE, COLABORACAO_ENTRE_GRUPOS, CURIOSIDADE, COLABORACAO_COM_O_CLIENTE, SATISFACAO_DO_CLIENTE, CONFORTO_COM_INCERTEZAS, EFICIENCIA, " +
+                    "VALORIZANDO_A_DIVERSIDADE, EXPANDIR_PODER, ENGAJAMENTO_DOS_FUNCIONARIOS, REALIZACAO_DO_FUNCIONARIO, SAUDE_DO_FUNCIONARIO, RECONHECIMENTO_DOS_FUNCIONARIOS, EMPODERAR, ENCORAJAMENTO, ENTUSIASMO, EMPREENDEDORISMO, " +
+                    "CONSCIENCIA_AMBIENTAL, IGUALDADE, EXCELENCIA, EXPERIENCIA, EXPLORACAO, IMPARCIALIDADE, ESTABILIDADE_FINANCEIRA, PERDAO, PREOCUPACAO_COM_FUTURAS_GERACOES, " +
+                    "LIDERANCA_GLOBAL, ORIENTADO_PARA_OBJETIVOS, HIERARQUIA, PENSAMENTO_HOLISTICO, HONESTIDADE, DIREITOS_HUMANOS, HUMOR_ALEGRIA, CAPACIDADE_DE_INCLUSAO, RETER_INFORMACOES, COMPARTILHAR_INFORMACOES, " +
+                    "INICIATIVA, INOVACAO, INTEGRIDADE, COMPETICAO_INTERNA, INSEGURANCA_DO_EMPREGO, DESENVOLVIMENTO_DA_LIDERANCA, LIDERANDO_PELO_EXEMPLO, ESCUTAR, TRABALHO_EXCESSIVO, PERSPECTIVA_DE_LONGO_PRAZO, " +
+                    "FAZER_A_DIFERENCA, MANIPULACAO, FOCO_NA_MISSAO, COMUNICACAO_ABERTA, ABERTURA) " +
+
+                    "VALUES(@SENSO_DE_DONO, @ATINGIR_OBJETIVOS, @ADAPTABILIDADE, @EQUILIBRIO, @SER_O_MELHOR, @CULPAR, @IMAGEM_DA_MARCA, @BUROCRACIA, @IMPORTAR_SE, @CAUTELA," +
+                    "@CLAREZA, @COACHING, @COMPROMETIMENTO, @ENVOLVIMENTO_COMUNITARIO, @COMPAIXAO, @SOLUCAO_DE_CONFLITOS, @CONFUSAO, @MELHORIA_CONTINUA, @APRENDIZAGEM_CONTINUA, @CONTROLE, " +
+                    "@COOPERACAO, @REDUCAO_DE_CUSTOS, @CORAGEM, @CRIATIVIDADE, @COLABORACAO_ENTRE_GRUPOS, @CURIOSIDADE, @COLABORACAO_COM_O_CLIENTE, @SATISFACAO_DO_CLIENTE, @CONFORTO_COM_INCERTEZAS, @EFICIENCIA, " +
+                    "@VALORIZANDO_A_DIVERSIDADE, @EXPANDIR_PODER, @ENGAJAMENTO_DOS_FUNCIONARIOS, @REALIZACAO_DO_FUNCIONARIO, @SAUDE_DO_FUNCIONARIO, @RECONHECIMENTO_DOS_FUNCIONARIOS, @EMPODERAR, @ENCORAJAMENTO, @ENTUSIASMO, @EMPREENDEDORISMO, " +
+                    "@CONSCIENCIA_AMBIENTAL, @IGUALDADE, @EXCELENCIA, @EXPERIENCIA, @EXPLORACAO, @IMPARCIALIDADE, @ESTABILIDADE_FINANCEIRA, @PERDAO, @PREOCUPACAO_COM_FUTURAS_GERACOES, " +
+                    "@LIDERANCA_GLOBAL, @ORIENTADO_PARA_OBJETIVOS, @HIERARQUIA, @PENSAMENTO_HOLISTICO, @HONESTIDADE, @DIREITOS_HUMANOS, @HUMOR_ALEGRIA, @CAPACIDADE_DE_INCLUSAO, @RETER_INFORMACOES, @COMPARTILHAR_INFORMACOES, " +
+                    "@INICIATIVA, @INOVACAO, @INTEGRIDADE, @COMPETICAO_INTERNA, @INSEGURANCA_DO_EMPREGO, @DESENVOLVIMENTO_DA_LIDERANCA, @LIDERANDO_PELO_EXEMPLO, @ESCUTAR, @TRABALHO_EXCESSIVO, @PERSPECTIVA_DE_LONGO_PRAZO, " +
+                    "@FAZER_A_DIFERENCA, @MANIPULACAO, @FOCO_NA_MISSAO, @COMUNICACAO_ABERTA, @ABERTURA)";
+                Comm.Parameters.AddWithValue("@SENSO_DE_DONO", valores.SensoDeDono);
+                Comm.Parameters.AddWithValue("@ATINGIR_OBJETIVOS", valores.AtingirObjetivos);
+                Comm.Parameters.AddWithValue("@ADAPTABILIDADE", valores.Adaptabilidade);
+                Comm.Parameters.AddWithValue("@EQUILIBRIO", valores.Equilibrio);
+                Comm.Parameters.AddWithValue("@SER_O_MELHOR", valores.SerOMelhor);
+                Comm.Parameters.AddWithValue("@CULPAR", valores.Culpar);
+                Comm.Parameters.AddWithValue("@IMAGEM_DA_MARCA", valores.ImagemDaMarca);
+                Comm.Parameters.AddWithValue("@BUROCRACIA", valores.Burocracia);
+                Comm.Parameters.AddWithValue("@IMPORTAR_SE", valores.ImportarSe);
+                Comm.Parameters.AddWithValue("@CAUTELA", valores.Cautela);
+                Comm.Parameters.AddWithValue("@CLAREZA", valores.Clareza);
+                Comm.Parameters.AddWithValue("@COACHING", valores.Coaching);
+                Comm.Parameters.AddWithValue("@COMPROMETIMENTO", valores.Comprometimento);
+                Comm.Parameters.AddWithValue("@ENVOLVIMENTO_COMUNITARIO", valores.EnvolvimentoComunitario);
+                Comm.Parameters.AddWithValue("@COMPAIXAO", valores.Compaixao);
+                Comm.Parameters.AddWithValue("@SOLUCAO_DE_CONFLITOS", valores.SolucaoDeConflitos);
+                Comm.Parameters.AddWithValue("@CONFUSAO", valores.Confusao);
+                Comm.Parameters.AddWithValue("@MELHORIA_CONTINUA", valores.MelhoriaContinua);
+                Comm.Parameters.AddWithValue("@APRENDIZAGEM_CONTINUA", valores.AprendizagemContinua);
+                Comm.Parameters.AddWithValue("@CONTROLE", valores.Controle);
+                Comm.Parameters.AddWithValue("@COOPERACAO", valores.Cooperacao);
+                Comm.Parameters.AddWithValue("@REDUCAO_DE_CUSTOS", valores.ReducaoDeCustos);
+                Comm.Parameters.AddWithValue("@CORAGEM", valores.Coragem);
+                Comm.Parameters.AddWithValue("@CRIATIVIDADE", valores.Criatividade);
+                Comm.Parameters.AddWithValue("@COLABORACAO_ENTRE_GRUPOS", valores.ColaboracaoEntreGrupos);
+                Comm.Parameters.AddWithValue("@CURIOSIDADE", valores.Curiosidade);
+                Comm.Parameters.AddWithValue("@COLABORACAO_COM_O_CLIENTE", valores.ColaboracaoComCliente);
+                Comm.Parameters.AddWithValue("@SATISFACAO_DO_CLIENTE", valores.SatisfacaoDoCliente);
+                Comm.Parameters.AddWithValue("@CONFORTO_COM_INCERTEZAS", valores.ConfortoComIncertezas);
+                Comm.Parameters.AddWithValue("@EFICIENCIA", valores.Eficiencia);
+                Comm.Parameters.AddWithValue("@VALORIZANDO_A_DIVERSIDADE", valores.ValorizandoADiversidade);
+                Comm.Parameters.AddWithValue("@EXPANDIR_PODER", valores.ExpandirPoder);
+                Comm.Parameters.AddWithValue("@ENGAJAMENTO_DOS_FUNCIONARIOS", valores.EngajamentoDosFuncionarios);
+                Comm.Parameters.AddWithValue("@REALIZACAO_DO_FUNCIONARIO", valores.RealizacaoDoFuncionario);
+                Comm.Parameters.AddWithValue("@SAUDE_DO_FUNCIONARIO", valores.SaudeDoFuncionario);
+                Comm.Parameters.AddWithValue("@RECONHECIMENTO_DOS_FUNCIONARIOS", valores.ReconhecimentoDoFuncionario);
+                Comm.Parameters.AddWithValue("@EMPODERAR", valores.Empoderar);
+                Comm.Parameters.AddWithValue("@ENCORAJAMENTO", valores.Encorajamento);
+                Comm.Parameters.AddWithValue("@ENTUSIASMO", valores.Entusiasmo);
+                Comm.Parameters.AddWithValue("@EMPREENDEDORISMO", valores.Empreendedorismo);
+                Comm.Parameters.AddWithValue("@CONSCIENCIA_AMBIENTAL", valores.ConscienciaAmbiental);
+                Comm.Parameters.AddWithValue("@IGUALDADE", valores.Igualdade);
+                Comm.Parameters.AddWithValue("@EXCELENCIA", valores.Excelencia);
+                Comm.Parameters.AddWithValue("@EXPERIENCIA", valores.Experiencia);
+                Comm.Parameters.AddWithValue("@EXPLORACAO", valores.Exploracao);
+                Comm.Parameters.AddWithValue("@IMPARCIALIDADE", valores.Imparcialidade);
+                Comm.Parameters.AddWithValue("@ESTABILIDADE_FINANCEIRA", valores.EstabilidadeFinanceira);
+                Comm.Parameters.AddWithValue("@PERDAO", valores.Perdao);
+                Comm.Parameters.AddWithValue("@PREOCUPACAO_COM_FUTURAS_GERACOES", valores.PreocupacaoComFuturasGeracoes);
+                Comm.Parameters.AddWithValue("@LIDERANCA_GLOBAL", valores.LiderancaGlobal);
+                Comm.Parameters.AddWithValue("@ORIENTADO_PARA_OBJETIVOS", valores.OrientadoParaObjetivos);
+                Comm.Parameters.AddWithValue("@HIERARQUIA", valores.Hierarquia);
+                Comm.Parameters.AddWithValue("@PENSAMENTO_HOLISTICO", valores.PensamentoHolistico);
+                Comm.Parameters.AddWithValue("@HONESTIDADE", valores.Honestidade);
+                Comm.Parameters.AddWithValue("@DIREITOS_HUMANOS", valores.DireitosHumanos);
+                Comm.Parameters.AddWithValue("@HUMOR_ALEGRIA", valores.HumorAlegria);
+                Comm.Parameters.AddWithValue("@CAPACIDADE_DE_INCLUSAO", valores.CapacidadeDeInclusao);
+                Comm.Parameters.AddWithValue("@RETER_INFORMACOES", valores.ReterInformacoes);
+                Comm.Parameters.AddWithValue("@COMPARTILHAR_INFORMACOES", valores.CompartilharInformacoes);
+                Comm.Parameters.AddWithValue("@INICIATIVA", valores.Iniciativa);
+                Comm.Parameters.AddWithValue("@INOVACAO", valores.Inovacao);
+                Comm.Parameters.AddWithValue("@INTEGRIDADE", valores.Integridade);
+                Comm.Parameters.AddWithValue("@COMPETICAO_INTERNA", valores.CompeticaoInterna);
+                Comm.Parameters.AddWithValue("@INSEGURANCA_DO_EMPREGO", valores.InsegurancaDoEmprego);
+                Comm.Parameters.AddWithValue("@DESENVOLVIMENTO_DA_LIDERANCA", valores.DesenvolvimentoDaLideranca);
+                Comm.Parameters.AddWithValue("@LIDERANDO_PELO_EXEMPLO", valores.LiderandoPeloExemplo);
+                Comm.Parameters.AddWithValue("@ESCUTAR", valores.Escutar);
+                Comm.Parameters.AddWithValue("@TRABALHO_EXCESSIVO", valores.TrabalhoExcessivo);
+                Comm.Parameters.AddWithValue("@PERSPECTIVA_DE_LONGO_PRAZO", valores.PerspectivaDeLongoPrazo);
+                Comm.Parameters.AddWithValue("@FAZER_A_DIFERENCA", valores.FazerADiferenca);
+                Comm.Parameters.AddWithValue("@MANIPULACAO", valores.Manipulacao);
+                Comm.Parameters.AddWithValue("@FOCO_NA_MISSAO", valores.FocoNaMissao);
+                Comm.Parameters.AddWithValue("@COMUNICACAO_ABERTA", valores.ComunicaoAberta);
+                Comm.Parameters.AddWithValue("@ABERTURA", valores.Abertura);
+
                 Comm.ExecuteNonQuery();
             }
             catch (Exception ex)

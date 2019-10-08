@@ -1,4 +1,5 @@
 ﻿using SearchForm.Models.ViewModels;
+using SearchForm.Models.ViewModels.BarrettValues;
 using SearchForm.Models.ViewModels.CaracteristicasDominantes;
 using SearchForm.Models.ViewModels.ColagemDeOrganizacao;
 using SearchForm.Models.ViewModels.CriteriosDeSucesso;
@@ -17,5 +18,6 @@ namespace SearchForm.Controllers.Interface
         void SalvarEnfaseEstrategica(EnfaseEstrategicaViewModel enfaseEstrategica);
         void SalvarCriteriosDeSucesso(CriteriosDeSucessoViewModel criteriosDeSucesso);
         void SalvarColagemDeOrganizacao(ColagemDeOrganizacaoViewModel colagemDeOrganizacao);
+        void SalvarBarrettValues(BarrettValuesViewModel barrettValues);
     }
 }
