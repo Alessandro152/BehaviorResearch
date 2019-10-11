@@ -1,6 +1,6 @@
 ﻿@model SearchForm.Models.ViewModels.GlobalViewModel
 @{
-    ViewBag.Title = "ColagemDeOrganizacao";
+    ViewBag.Title = "GestaoDeFuncionarios";
 }
 <br />
 <br />
@@ -12,11 +12,11 @@
                 alert('@ViewBag.Alert');
             </script>
         }
-        @using (Html.BeginForm("EnfaseEstrategicaView", "Home", FormMethod.Post))
+        @using (Html.BeginForm("ColagemDeOrganizacaoView", "Pages", FormMethod.Post))
         {
             <div>
                 <div class="QuestionTitle">
-                    <h4>Pergunta 4 - Colagem De Organização</h4>
+                    <h4>Pergunta 3 - Gestão de Funcionários</h4>
                 </div>
                 <div class="q1">
                     A - O estilo de gestão na organização é caracterizado pelo trabalho em equipe, consenso e participação
@@ -24,8 +24,8 @@
                 <table class="TextBox">
                     <tr>
                         <th>
-                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
-                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
                         </th>
                     </tr>
                 </table>
@@ -35,8 +35,8 @@
                 <table class="TextBox">
                     <tr>
                         <th>
-                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
-                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
                         </th>
                     </tr>
                 </table>
@@ -46,8 +46,8 @@
                 <table class="TextBox">
                     <tr>
                         <th>
-                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
-                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
                         </th>
                     </tr>
                 </table>
@@ -57,8 +57,8 @@
                 <table class="TextBox">
                     <tr>
                         <th>
-                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
-                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
                         </th>
                     </tr>
                 </table>
@@ -67,3 +67,4 @@
         }
     </div>
 </div>
+

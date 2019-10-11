@@ -8,7 +8,7 @@
     <h3 class="MainHeader">Olá, seja bem-vindo! Por gentileza, informe seus dados abaixo e em seguinda responda o questionário. Será um prazer ouvir você.</h3><br />
     <fieldset class="MainFieldset">
         <div>
-            @using (Html.BeginForm("CaracteristicasDominantesView", "Home", FormMethod.Post))
+            @using (Html.BeginForm("CaracteristicasDominantesView", "Pages", FormMethod.Post))
             {
                 @Html.TextBoxFor(m => m.Pessoa.Nome, new { @class = "nameForm", @required = "required", placeholder = "Nome Completo", autocomplete="off" })
                 @Html.TextBoxFor(m => m.Pessoa.Departamento, new{ @class = "departmentForm", @required = "required", placeholder = "Departamento / Àrea", autocomplete="off" })

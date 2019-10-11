@@ -5,14 +5,14 @@ using System.Web.Mvc;
 
 namespace SearchForm.Controllers.Principal
 {
-    public class HomeController : Controller
+    public class PagesController : Controller
     {
         private const string ERRO = "Dados Incorretos. Lembre-se: Um unico campo nao pode ser maior que 100 e nem a soma dos quatro campos de expectativa ou realidade pode ser maior que 100";
         private readonly IRepository _repo;
         private readonly SearchFormAppServiceHandler _appServiceHandler;
 
         //Construtor do controller. Ele irá instanciar apenas uma vez o repositório
-        public HomeController(IRepository repo, SearchFormAppServiceHandler appServiceHandler)
+        public PagesController(IRepository repo, SearchFormAppServiceHandler appServiceHandler)
         {
             _repo = repo;
             _appServiceHandler = appServiceHandler;
@@ -185,7 +185,7 @@ namespace SearchForm.Controllers.Principal
         }
         #endregion
 
-        #region BarrettValues
+        #region Finish
         public ActionResult BarrettValues()
         {
             return View();
@@ -195,7 +195,7 @@ namespace SearchForm.Controllers.Principal
         public ActionResult FinishView(GlobalViewModel dados)
         {
             _repo.SalvarBarrettValues(dados.BarrettValues);
-            return View();
+            return View("Finish");
         }
         #endregion
         

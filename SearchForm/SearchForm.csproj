@@ -122,15 +122,15 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Style\StyleSheet.css" />
     <Content Include="Web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\CaractetisticasDominantes.cshtml" />
+    <Content Include="Views\Pages\Index.cshtml" />
+    <Content Include="Views\Pages\CaractetisticasDominantes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\SearchFormAppServiceHandler.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
     <Compile Include="Controllers\Interface\IRepository.cs" />
     <Compile Include="Domain\SearchFormDomain.cs" />
     <Compile Include="Global.asax.cs">
@@ -157,13 +157,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Home\LiderancaOrganizacional.cshtml" />
-    <Content Include="Views\Home\GestaoDeFuncionarios.cshtml" />
-    <Content Include="Views\Home\ColagemDeOrganizacao.cshtml" />
-    <Content Include="Views\Home\EnfaseEstrategica.cshtml" />
-    <Content Include="Views\Home\CriteriosDeSucesso.cshtml" />
-    <Content Include="Views\Home\BarrettValues.cshtml" />
-    <Content Include="Views\Home\Finish.cshtml" />
+    <Content Include="Views\Pages\LiderancaOrganizacional.cshtml" />
+    <Content Include="Views\Pages\GestaoDeFuncionarios.cshtml" />
+    <Content Include="Views\Pages\ColagemDeOrganizacao.cshtml" />
+    <Content Include="Views\Pages\EnfaseEstrategica.cshtml" />
+    <Content Include="Views\Pages\CriteriosDeSucesso.cshtml" />
+    <Content Include="Views\Pages\BarrettValues.cshtml" />
+    <Content Include="Views\Pages\Finish.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
