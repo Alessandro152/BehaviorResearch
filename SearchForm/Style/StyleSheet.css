@@ -2,14 +2,14 @@
     background-color: #e2e2e2;
 }
 
-.headerImage {
+.MainHeaderImage {
     margin-left: 5%;
     box-shadow: 10px 10px 10px #808080;
     border-radius: 2px;
     width: 250px;
 }
 
-.MainHeader {
+.MainHeaderTitle {
     background-color: #fff;
     border-radius: 5px;
     font: 19px Helvetica;
@@ -28,7 +28,7 @@
     box-shadow: 5px 5px 5px #808080;
 }
 
-.nameForm, .departmentForm, .functionForm {
+.IndexInformations {
     font: bold 12px Helvetica, sans-serif;
     color: #484848;
     margin: 50px 0px 0px 20px;
@@ -94,7 +94,7 @@
     color: #808080;
 }
 
-.q1, .q2, .q3, .q4 {
+.QuestionDescription {
     padding: 1em;
     font: 12px Helvetica, sans-serif;
     margin: 2% 0px 0px 0%;
@@ -160,4 +160,14 @@
 .ImageExemple:hover {
     margin: 0% 0px 0px 0%;
     height: 500px;
+}
+
+.FinalMessage {
+    padding: 1em;
+    font: 30px Helvetica, sans-serif;
+    margin: 10% 0px 0px 0%;
+    border-radius: 5px;
+    background-color: #B4B4B4;
+    color: #373A36;
+    text-align: center;
 }

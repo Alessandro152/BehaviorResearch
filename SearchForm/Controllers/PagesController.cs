@@ -195,9 +195,15 @@ namespace SearchForm.Controllers.Principal
         public ActionResult FinishView(GlobalViewModel dados)
         {
             _repo.SalvarBarrettValues(dados.BarrettValues);
-            return View("Finish");
+            return RedirectToAction("Finish");
+        }
+
+        public ActionResult Finish()
+        {
+            return View();
         }
         #endregion
-        
+
+
     }
 }
