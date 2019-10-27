@@ -1,4 +1,4 @@
-﻿using SearchForm.Application;
+﻿using SearchForm.Application.AppServices;
 using SearchForm.Controllers.Interface;
 using SearchForm.Models.ViewModels;
 using System.Web.Mvc;

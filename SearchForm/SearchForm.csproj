@@ -126,7 +126,7 @@
     <Content Include="Views\Pages\CaractetisticasDominantes.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\SearchFormAppServiceHandler.cs" />
+    <Compile Include="Application\AppServices\SearchFormAppServiceHandler.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />

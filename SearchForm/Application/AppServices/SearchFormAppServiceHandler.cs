@@ -2,7 +2,7 @@
 using SearchForm.Domain;
 using SearchForm.Models.ViewModels;
 
-namespace SearchForm.Application
+namespace SearchForm.Application.AppServices
 {
     public class SearchFormAppServiceHandler
     {
