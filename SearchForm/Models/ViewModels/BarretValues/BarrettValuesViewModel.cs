@@ -1,4 +1,7 @@
 ﻿
+using System.Collections.Generic;
+using System.Linq;
+
 namespace SearchForm.Models.ViewModels.BarrettValues
 {
     public class BarrettValuesViewModel

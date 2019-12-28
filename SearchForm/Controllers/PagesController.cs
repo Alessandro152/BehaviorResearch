@@ -1,6 +1,10 @@
 ﻿using SearchForm.Application;
 using SearchForm.Controllers.Interface;
 using SearchForm.Models.ViewModels;
+using SearchForm.Models.ViewModels.BarrettValues;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace SearchForm.Controllers.Principal
@@ -30,22 +34,29 @@ namespace SearchForm.Controllers.Principal
         [HttpPost]
         public ActionResult CaracteristicasDominantesView(GlobalViewModel dados)
         {
-            _repo.SalvarDadosPessoa(dados.Pessoa);
+            TempData["Pessoa"] = new personViewModel()
+            {
+                Nome = dados.Pessoa.Nome,
+                Departamento = dados.Pessoa.Departamento,
+                Cargo = dados.Pessoa.Cargo
+            };
+
             return RedirectToAction("CaractetisticasDominantes");
         }
 
         public ActionResult CaractetisticasDominantes()
         {
             ViewBag.Alert = string.Empty;
+            if(TempData["Pessoa"] != null) TempData.Keep("Pessoa");
             return View();
         }
         #endregion
 
-        #region LiderancaOrganizacional
+        #region Respostas
         [HttpPost]
         public ActionResult LiderancaOrganizacionalView(GlobalViewModel dados)
         {
-            bool HasSumError = _appServiceHandler.VerificarCampos(dados);
+            bool HasSumError = _appServiceHandler.VerificarCampos(dados);           
 
             if (HasSumError)
             {
@@ -54,138 +65,14 @@ namespace SearchForm.Controllers.Principal
             }
             else
             {
-                _repo.SalvarCaracteristicasDominantes(dados.CaracteristicasDominantes);
-                return RedirectToAction("LiderancaOrganizacional");
-            }
-        }
-
-        public ActionResult LiderancaOrganizacional()
-        {
-            ViewBag.Alert = string.Empty;
-            return View();
-        }
-        #endregion
-
-        #region GestaoDeFuncionarios
-        [HttpPost]
-        public ActionResult GestaoDeFuncionariosView(GlobalViewModel dados)
-        {
-            bool HasSumError = _appServiceHandler.VerificarCampos(dados);
-
-            if (HasSumError)
-            {
-                ViewBag.Alert = ERRO;
-                return View("LiderancaOrganizacional");
-            }
-            else
-            {
-                _repo.SalvarLiderancaOrganizacional(dados.LiderancaOrganizacional);
-                return RedirectToAction("GestaoDeFuncionarios");
-            }
-        }
-
-        public ActionResult GestaoDeFuncionarios()
-        {
-            ViewBag.Alert = string.Empty;
-            return View();
-        }
-        #endregion
-
-        #region ColagemDeOrganizacao
-        [HttpPost]
-        public ActionResult ColagemDeOrganizacaoView(GlobalViewModel dados)
-        {
-            bool HasSumError = _appServiceHandler.VerificarCampos(dados);
-
-            if (HasSumError)
-            {
-                ViewBag.Alert = ERRO;
-                return View("GestaoDeFuncionarios");
-            }
-            else
-            {
-                _repo.SalvarGestaoDeFuncionarios(dados.GestaoDeFuncionarios);
-                return RedirectToAction("ColagemDeOrganizacao");
-            }
-        }
-
-        public ActionResult ColagemDeOrganizacao()
-        {
-            ViewBag.Alert = string.Empty;
-            return View();
-        }
-        #endregion
-
-        #region EnfaseEstrategica
-        [HttpPost]
-        public ActionResult EnfaseEstrategicaView(GlobalViewModel dados)
-        {
-            bool HasSumError = _appServiceHandler.VerificarCampos(dados);
-
-            if (HasSumError)
-            {
-                ViewBag.Alert = ERRO;
-                return View("ColagemDeOrganizacao");
-            }
-            else
-            {
-                _repo.SalvarColagemDeOrganizacao(dados.ColagemDeOrganizacao);
-                return RedirectToAction("EnfaseEstrategica");
-            }
-        }
-
-        public ActionResult EnfaseEstrategica()
-        {
-            ViewBag.Alert = string.Empty;
-            return View();
-        }
-        #endregion
-
-        #region CriteriosDeSucesso
-        [HttpPost]
-        public ActionResult CriteriosDeSucessoView(GlobalViewModel dados)
-        {
-            bool HasSumError = _appServiceHandler.VerificarCampos(dados);
-
-            if (HasSumError)
-            {
-                ViewBag.Alert = ERRO;
-                return View("EnfaseEstrategica");
-            }
-            else
-            {
-                _repo.SalvarEnfaseEstrategica(dados.EnfaseEstrategica);
-                return RedirectToAction("CriteriosDeSucesso");
-            }
-        }
-
-        public ActionResult CriteriosDeSucesso()
-        {
-            ViewBag.Alert = string.Empty;
-            return View();
-        }
-        #endregion
-
-        #region BarrettValues
-        [HttpPost]
-        public ActionResult BarrettValuesView(GlobalViewModel dados)
-        {
-            bool HasSumError = _appServiceHandler.VerificarCampos(dados);
-
-            if (HasSumError)
-            {
-                ViewBag.Alert = ERRO;
-                return View("CriteriosDeSucesso");
-            }
-            else
-            {
-                _repo.SalvarCriteriosDeSucesso(dados.CriteriosDeSucesso);
+                dados.Pessoa = TempData["Pessoa"] as personViewModel;
+                _repo.SalvarRespostas(dados);
                 return RedirectToAction("BarrettValues");
             }
         }
         #endregion
 
-        #region Finish
+        #region BarrettValues
         public ActionResult BarrettValues()
         {
             return View();
@@ -197,13 +84,13 @@ namespace SearchForm.Controllers.Principal
             _repo.SalvarBarrettValues(dados.BarrettValues);
             return RedirectToAction("Finish");
         }
+        #endregion
 
+        #region Finish
         public ActionResult Finish()
         {
             return View();
         }
         #endregion
-
-
     }
 }

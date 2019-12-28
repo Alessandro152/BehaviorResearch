@@ -5,10 +5,10 @@
 }
 
 <div>
-    <h2 class="pageOneHeader">
+    <h3>
         A seguir, você responderá 6 questionários da seguinte maneira: Você tem 100 pontos e deve distribuí-los nas quatro alternativas abaixo.
         Cada campo EXPECTATIVA OU REALIDADE deve receber um valor de forma que a soma destes campos chegue a 100. Passe o mouse sobre o exemplo antes de começar.
-    </h2>
+    </h3>
     <img src="/Images/Exemplo.png" class="ImageExemple">
 </div>
 <br />
@@ -70,8 +70,248 @@
                         </th>
                     </tr>
                 </table>
+                <br />
+                <div>
+                    <h4 class="QuestionTitle">Pergunta 2 - Liderança Organizacional</h4>
+                </div>
+                <div class="QuestionDescription">
+                    A - Geralmente, considera-se que a liderança na organização exemplifica a orientação, a facilitação ou o incentivo
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    B - Considera-se geralmente que a liderança na organização exemplifica o empreendedorismo, a inovação ou a atribuição de riscos
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    C - Geralmente, considera-se que a liderança na organização exemplifica um enfoque orientado a resultados agressivos e sem sentido
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    D - Geralmente, considera-se que a liderança na organização exemplifica a eficiência de coordenação, organização ou eficiência
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <br />
+                <div>
+                    <h4 class="QuestionTitle">Pergunta 3 - Gestão de Funcionários</h4>
+                </div>
+                <div class="QuestionDescription">
+                    A - O estilo de gestão na organização é caracterizado pelo trabalho em equipe, consenso e participação
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    B - O estilo de gestão na organização é caracterizado pelo risco individual, inovação, liberdade e exclusividade
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    C - O estilo de gestão na organização é caracterizado pela competitividade, alta demanda e conquista
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    D - O estilo de gestão na organização é caracterizado pela segurança do emprego, conformidade, previsibilidade e estabilidade nos relacionamentos
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <br />
+                <div>
+                    <h4 class="QuestionTitle">Pergunta 4 - Colagem De Organização</h4>
+                </div>
+                <div class="QuestionDescription">
+                    A - O estilo de gestão na organização é caracterizado pelo trabalho em equipe, consenso e participação
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    B - O estilo de gestão na organização é caracterizado pelo risco individual, inovação, liberdade e exclusividade
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    C - O estilo de gestão na organização é caracterizado pela competitividade, alta demanda e conquista
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    D - O estilo de gestão na organização é caracterizado pela segurança do emprego, conformidade, previsibilidade e estabilidade nos relacionamentos
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <br />
+                <div>
+                    <h4 class="QuestionTitle">Pergunta 5 - Ênfase Estratégica</h4>
+                </div>
+                <div class="QuestionDescription">
+                    A - A organização enfatiza o desenvolvimento humano. Alta confiança, abertura e participação persistem
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    B - A organização enfatiza a aquisição de novos recursos e a criação de novos desafios. Experimentar coisas novas e prospecção de oportunidades são valorizadas
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    C - A organização enfatiza ações e realizações competitivas. Atingir alvos esticados e ganhar no mercado são dominantes
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    D - A organização enfatiza permanência e estabilidade. Eficiência, controle e operações suaves são importantes
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <br />
+                <div>
+                    <h4 class="QuestionTitle">Pergunta 6 - Critérios De Sucesso</h4>
+                </div>
+                <div class="QuestionDescription">
+                    A - A organização define o sucesso com base no desenvolvimento de recursos humanos, trabalho em equipe, comprometimento dos funcionários e preocupação com as pessoas.
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    B - A organização define o sucesso com base em produtos exclusivos ou mais novos. É um líder de produto e inovador
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    C - A organização define o sucesso com base em ganhar no mercado e superar a concorrência. Liderança competitiva no mercado é fundamental
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
+                <div class="QuestionDescription">
+                    D - A organização define o sucesso com base na eficiência. Entrega confiável, agendamento suave e produção de baixo custo são essenciais
+                </div>
+                <table class="TextBox">
+                    <tr>
+                        <th>
+                            @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
+                            @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
+                        </th>
+                    </tr>
+                </table>
             </div>
-            <input class="QuestionSubmit" type="submit" value="Próximo" />
+            <input class="submitData" type="submit" value="Próximo" />
         }
     </div>
 </div>
