@@ -1,7 +1,7 @@
 ﻿@model SearchForm.Models.ViewModels.GlobalViewModel
 
 @{
-    ViewBag.Title = "CaractetisticasDominantes";
+    ViewBag.Title = "Page2";
 }
 
 <div>
@@ -11,7 +11,6 @@
     </h3>
     <img src="/Images/Exemplo.png" class="ImageExemple">
 </div>
-<br />
 <div>
     <div>
         @if (ViewBag.Alert != string.Empty)
@@ -20,7 +19,7 @@
                 alert('@ViewBag.Alert');
             </script>
         }
-        @using (Html.BeginForm("LiderancaOrganizacionalView", "Pages", FormMethod.Post))
+        @using (Html.BeginForm("AnswersView", "Pages", FormMethod.Post))
         {
             <div>
                 <div>

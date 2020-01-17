@@ -8,7 +8,7 @@
     <h3>Olá, seja bem-vindo!! preencha seus dados abaixo antes de iniciar a pesquisa</h3>
     <fieldset class="box">
         <div>
-            @using (Html.BeginForm("CaracteristicasDominantesView", "Pages", FormMethod.Post))
+            @using (Html.BeginForm("ToPage2View", "Pages", FormMethod.Post))
             {
                 @Html.TextBoxFor(m => m.Pessoa.Nome, new { @class = "name", @required = "required", placeholder = "Nome Completo", autocomplete = "off" })
                 @Html.TextBoxFor(m => m.Pessoa.Departamento, new { @class = "department", @required = "required", placeholder = "Departamento / Àrea", autocomplete = "off" })

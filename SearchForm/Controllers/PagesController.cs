@@ -1,10 +1,6 @@
 ﻿using SearchForm.Application;
 using SearchForm.Controllers.Interface;
 using SearchForm.Models.ViewModels;
-using SearchForm.Models.ViewModels.BarrettValues;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace SearchForm.Controllers.Principal
@@ -32,7 +28,7 @@ namespace SearchForm.Controllers.Principal
 
         #region CaracteristicasDominantes
         [HttpPost]
-        public ActionResult CaracteristicasDominantesView(GlobalViewModel dados)
+        public ActionResult ToPage2View(GlobalViewModel dados)
         {
             TempData["Pessoa"] = new personViewModel()
             {
@@ -41,10 +37,10 @@ namespace SearchForm.Controllers.Principal
                 Cargo = dados.Pessoa.Cargo
             };
 
-            return RedirectToAction("CaractetisticasDominantes");
+            return RedirectToAction("Page2");
         }
 
-        public ActionResult CaractetisticasDominantes()
+        public ActionResult Page2()
         {
             ViewBag.Alert = string.Empty;
             if(TempData["Pessoa"] != null) TempData.Keep("Pessoa");
@@ -54,14 +50,14 @@ namespace SearchForm.Controllers.Principal
 
         #region Respostas
         [HttpPost]
-        public ActionResult LiderancaOrganizacionalView(GlobalViewModel dados)
+        public ActionResult AnswersView(GlobalViewModel dados)
         {
             bool HasSumError = _appServiceHandler.VerificarCampos(dados);           
 
             if (HasSumError)
             {
                 ViewBag.Alert = ERRO;
-                return View("CaractetisticasDominantes");
+                return View("Page2");
             }
             else
             {
