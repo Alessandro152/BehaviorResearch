@@ -5,16 +5,16 @@
 }
 
 <div>
-    <h3 class="MainHeaderTitle">Olá, seja bem-vindo! Por gentileza, informe seus dados abaixo e em seguinda responda o questionário. Será um prazer ouvir você.</h3><br />
-    <fieldset class="MainFieldset">
+    <h3>Olá, seja bem-vindo!! preencha seus dados abaixo antes de iniciar a pesquisa</h3>
+    <fieldset class="box">
         <div>
-            @using (Html.BeginForm("CaracteristicasDominantesView", "Pages", FormMethod.Post))
+            @using (Html.BeginForm("ToPage2View", "Pages", FormMethod.Post))
             {
-                @Html.TextBoxFor(m => m.Pessoa.Nome, new { @class = "IndexInformations", @required = "required", placeholder = "Nome Completo", autocomplete="off" })
-                @Html.TextBoxFor(m => m.Pessoa.Departamento, new{ @class = "IndexInformations", @required = "required", placeholder = "Departamento / Àrea", autocomplete="off" })
-                @Html.TextBoxFor(m => m.Pessoa.Cargo, new { @class = "IndexInformations", @required = "required", placeholder = "Cargo", autocomplete="off" })
+                @Html.TextBoxFor(m => m.Pessoa.Nome, new { @class = "name", @required = "required", placeholder = "Nome Completo", autocomplete = "off" })
+                @Html.TextBoxFor(m => m.Pessoa.Departamento, new { @class = "department", @required = "required", placeholder = "Departamento / Àrea", autocomplete = "off" })
+                @Html.TextBoxFor(m => m.Pessoa.Cargo, new { @class = "ocuppation", @required = "required", placeholder = "Cargo", autocomplete = "off" })
                 <br />
-                <input class="submitMain" type="submit" value="Próximo" />
+                <input class="submitData" type="submit" value="Próximo" />
             }
         </div>
     </fieldset>

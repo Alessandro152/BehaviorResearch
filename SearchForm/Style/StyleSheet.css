@@ -1,152 +1,134 @@
 ﻿body {
-    background-color: #e2e2e2;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #c6c6c6;
+}
+
+h3 {
+    font: 15px sans-serif;
+    text-transform: uppercase;
+    color: darkslategrey;
+    text-align: center;
+    font-weight: 500;
 }
 
 .MainHeaderImage {
+    margin-top: 1%;
     margin-left: 5%;
-    box-shadow: 5px 5px 5px #808080;
-    border-radius: 2px;
+    box-shadow: 10px 5px 15px 3px #888888;
     width: 250px;
 }
 
-.MainHeaderTitle {
-    background-color: #fff;
-    border-radius: 5px;
-    font: 19px Helvetica;
-    text-align: center center;
-    margin-top: 50px;
-    color: #808080;
-    width: 98%;
+.box {
+    width: 380px;
+    padding: 20px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1e4b65;
+    text-align: center;
 }
 
-.MainFieldset {
-    margin: 0% 0px 0px 0%;
-    height: 400px;
-    background-color: #B4B4B4;
-    width: 440px;
-    border-radius: 4px;
-    box-shadow: 5px 5px 5px #808080;
+.name, .department, .ocuppation {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #c6c6c6;
+    padding: 14px 10px;
+    width: 200px;
+    border-radius: 24px;
+    outline: none;
+    color: whitesmoke;
+    transition: 0.25s;
 }
 
-.IndexInformations {
-    font: bold 12px Helvetica, sans-serif;
-    color: #484848;
-    margin: 50px 0px 0px 20px;
-    border-radius: 4px;
-    height: 48px;
-    width: 100%;
-    border: 1px solid #808080;
-    box-shadow: 5px 5px 5px #808080;
+.name:hover, .department:hover, .ocuppation:hover {
+    width: 280px;
+    border: 2px solid #0074D9;
 }
 
-.submitMain {
-    font: bold 12px Helvetica, sans-serif;
-    margin: 10% 0px 0px 70%;
-    text-align: center center;
-    border-radius: 4px;
-    height: 40px;
-    width: 100px;
-    color: #fff;
-    border: transparent;
-    background-color: rgba(30,75,101, 0.75);
-    box-shadow: 5px 5px 5px #808080;
+.name:focus, .department:focus, .ocuppation:focus {
+    width: 280px;
+    border: 2px solid #0074D9;
 }
 
-.submitMain:hover {
-    background-color: #999999;
-    border: 1px solid #fff;
-    color: #fff;
+.submitData {
+    border: 0;
+    background: #0074D9;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 40px;
+    border-radius: 24px;
+    outline: none;
+    color: white;
+    transition: 0.25s;
+}
+
+.submitData:hover {
+    background: #3ae826;
 }
 
 /*-------------Questionario-----------------*/
 
 .QuestionTitle {
-    font: bold 18px Helvetica, sans-serif;
+    font: 15px sans-serif;
     color: #373A36;
     margin-left: 0%;
     background-color: #fff;
-    border-radius: 5px;
     text-align: center;
-    width: 300px;
-}
-
-.QuestionSubmit {
-    border-radius: 4px;
-    height: 40px;
-    margin: 20px 0 0 90%;
-    width: 100px;
-    color: #fff;
-    border: transparent;
-    background-color: rgba(30,75,101, 0.75);
-    box-shadow: 5px 5px 5px #808080;
-}
-
-.QuestionSubmit:hover {
-    background-color: rgba(30,75,101, 0.95);
-    color: #fff;
-}
-
-.pageOneHeader {
-    font: 16px Helvetica, sans-serif;
-    text-align: center center;
-    margin-top: 50px;
-    width: auto;
-    color: #808080;
+    width: 500px;
+    border-radius: 24px;
 }
 
 .QuestionDescription {
-    padding: 1em;
-    font: 12px Helvetica, sans-serif;
-    margin: 2% 0px 0px 0%;
-    border-radius: 5px;
-    background-color: #B4B4B4;
-    color: #373A36;
+    padding: 12px 20px;
+    font: 11px sans-serif;
+    margin: 2% 0% 0% 0%;
+    border-radius: 24px;
+    background: #1e4b65;
+    color: whitesmoke;
     width: 95%;
-    height: 40px;
-    box-shadow: 5px 5px 5px #808080;
 }
 
-.expectForm {
-    font: 10px Helvetica, sans-serif;
+.expectForm, .realForm {
+    font: 10px sans-serif;
     text-align: center;
-    border-radius: 3px;
-    height: 30px;
-    width: 70px;
+    border-radius: 24px;
+    height: 34px;
+    width: 60px;
     border: 1px solid #e2e2e2;
-    box-shadow: 5px 5px 5px #808080;
+    transition: 0.25s;
+}
+
+.expectForm:focus, .realForm:focus {
+    width: 90px;
+    border: 2px solid #0074D9;
 }
 
 .realForm {
-    font: 10px Helvetica, sans-serif;
-    text-align: center;
     margin-left: 5px;
-    border-radius: 3px;
-    height: 30px;
-    width: 70px;
-    border: 1px solid #e2e2e2;
-    box-shadow: 5px 5px 5px #808080;
 }
 
-.ColumnOne {
-    background-color: #B4B4B4;
-    margin: 5% 0px 0px 5%;
-    font: 14px Helvetica, sans-serif;
-    width: 340px;
-    border-radius: 4px;
+.ColumnOne, .ColumnTwo, .ColumnThree {
+    margin-left: 10%;
+    font: 11px sans-serif;
+    width: 250px;
 }
 
 .ColumnTwo {
-    margin: -49% 0px 0px 35%;
-    font: 14px Helvetica, sans-serif;
-    width: 340px;
+    margin-top: -47%;
+    margin-left: 35%;
+    width: 300px;
 }
 
 .ColumnThree {
-    margin: -50% 0px 0px 65%;
-    font: 14px Helvetica, sans-serif;
-    width: 340px;
-    border-radius: 4px;
-    background-color: #B4B4B4;
+    margin-top: -48%;
+    margin-left: 63%;
 }
 
 .TextBox {
@@ -156,7 +138,9 @@
 .ImageExemple {
     margin: 0% 0px 0px 0%;
     height: 100px;
+    transition: 0.25s;
 }
+
 .ImageExemple:hover {
     margin: 0% 0px 0px 0%;
     height: 500px;
