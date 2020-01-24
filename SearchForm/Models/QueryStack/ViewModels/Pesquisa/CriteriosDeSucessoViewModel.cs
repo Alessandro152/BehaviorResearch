@@ -1,5 +1,5 @@
 ﻿
-namespace SearchForm.Models.ViewModels.CriteriosDeSucesso
+namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
 {
     public class CriteriosDeSucessoViewModel
     {

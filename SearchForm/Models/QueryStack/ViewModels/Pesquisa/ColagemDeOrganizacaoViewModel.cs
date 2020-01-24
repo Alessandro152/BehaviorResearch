@@ -1,5 +1,5 @@
 ﻿
-namespace SearchForm.Models.ViewModels.ColagemDeOrganizacao
+namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
 {
     public class ColagemDeOrganizacaoViewModel
     {

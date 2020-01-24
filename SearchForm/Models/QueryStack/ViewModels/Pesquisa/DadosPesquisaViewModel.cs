@@ -1,16 +1,11 @@
-﻿using SearchForm.Models.ViewModels.BarrettValues;
-using SearchForm.Models.ViewModels.CaracteristicasDominantes;
-using SearchForm.Models.ViewModels.ColagemDeOrganizacao;
-using SearchForm.Models.ViewModels.CriteriosDeSucesso;
-using SearchForm.Models.ViewModels.EnfaseEstrategica;
-using SearchForm.Models.ViewModels.GestaoDeFuncionarios;
-using SearchForm.Models.ViewModels.LiderancaOrganizacional;
+﻿using SearchForm.Models.QueryStack.ViewModels.Funcionario;
 
-namespace SearchForm.Models.ViewModels
+
+namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
 {
-    public class GlobalViewModel
+    public class DadosPesquisaViewModel
     {
-        public personViewModel Pessoa { get; set; }
+        public FuncionarioViewModel Funcionario { get; set; }
         public CaracteristicasDominantesViewModel CaracteristicasDominantes { get; set; }
         public LiderancaOrganizacionalViewModel LiderancaOrganizacional { get; set; }
         public ColagemDeOrganizacaoViewModel ColagemDeOrganizacao { get; set; }

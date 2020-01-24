@@ -1,7 +1,7 @@
-﻿@model SearchForm.Models.ViewModels.GlobalViewModel
+﻿@model SearchForm.Models.QueryStack.ViewModels.Pesquisa.DadosPesquisaViewModel
 
 @{
-    ViewBag.Title = "Page2";
+    ViewBag.Title = "Pesquisa Comportamental";
 }
 
 <div>
@@ -19,7 +19,7 @@
                 alert('@ViewBag.Alert');
             </script>
         }
-        @using (Html.BeginForm("AnswersView", "Pages", FormMethod.Post))
+        @using (Html.BeginForm("SalvarPesquisa", "Pages", FormMethod.Post))
         {
             <div>
                 <div>

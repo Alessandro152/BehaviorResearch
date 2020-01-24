@@ -1,4 +1,4 @@
-﻿@model SearchForm.Models.ViewModels.GlobalViewModel
+﻿@model SearchForm.Models.QueryStack.ViewModels.Pesquisa.BarrettValuesViewModel
 @{
     ViewBag.Title = "BarrettValues";
 }
@@ -7,7 +7,7 @@
 </div>
 <div>
     <div>
-        @using (Html.BeginForm("FinishView", "Pages"))
+        @using (Html.BeginForm("Finalizar", "Pages"))
         {
             <table class="ColumnOne">
                 <tr>

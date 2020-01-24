@@ -1,21 +1,18 @@
 ﻿using MySql.Data.MySqlClient;
-using SearchForm.Controllers.Interface;
-using SearchForm.Controllers.Principal;
-using SearchForm.Models.ViewModels;
-using SearchForm.Models.ViewModels.BarrettValues;
+using SearchForm.Models.QueryStack.Interface;
+using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
 using System;
-using System.Collections.Generic;
 using System.Data;
 
 
-namespace SearchForm.Infra.Reprositories
+namespace SearchForm.Models.Infra
 {
     public class Repository : IRepository
     {
         private MySqlConnection connect;
         public MySqlConnection DatabaseConnection { get; private set; }
 
-        public void SalvarRespostas(GlobalViewModel dados)
+        public void SalvarRespostas(DadosPesquisaViewModel dados)
         {
             try
             {
@@ -28,9 +25,9 @@ namespace SearchForm.Infra.Reprositories
                 Comm.ExecuteNonQuery();
 
                 Comm.CommandText = "INSERT INTO PESSOA (NOME, DEPARTAMENTO, CARGO) VALUES(@NOME, @DEPARTAMENTO, @CARGO)";
-                Comm.Parameters.AddWithValue("@NOME", dados.Pessoa.Nome);
-                Comm.Parameters.AddWithValue("@DEPARTAMENTO", dados.Pessoa.Departamento);
-                Comm.Parameters.AddWithValue("@CARGO", dados.Pessoa.Cargo);
+                Comm.Parameters.AddWithValue("@NOME", dados.Funcionario.Nome);
+                Comm.Parameters.AddWithValue("@DEPARTAMENTO", dados.Funcionario.Departamento);
+                Comm.Parameters.AddWithValue("@CARGO", dados.Funcionario.Cargo);
                 Comm.ExecuteNonQuery();
 
                 Comm.CommandText = "INSERT INTO CARACTERISTICASDOMINANTES (CD_A_EXPECT, CD_A_REAL, CD_B_EXPECT, CD_B_REAL, CD_C_EXPECT, CD_C_REAL, CD_D_EXPECT, CD_D_REAL) VALUES(@CD_A_EXPECT, @CD_A_REAL, @CD_B_EXPECT, @CD_B_REAL, @CD_C_EXPECT, @CD_C_REAL, @CD_D_EXPECT, @CD_D_REAL)";
@@ -107,7 +104,7 @@ namespace SearchForm.Infra.Reprositories
             {
                 if (DatabaseConnection.State == ConnectionState.Open)
                 {
-                    DatabaseConnection.Close();
+                    DatabaseConnection.Dispose();
                 }
             }
         }
@@ -225,20 +222,22 @@ namespace SearchForm.Infra.Reprositories
             {
                 if (DatabaseConnection.State == ConnectionState.Open)
                 {
-                    DatabaseConnection.Close();
+                    DatabaseConnection.Dispose();
                 }
             }
         }
 
         private MySqlConnection conexaoBanco()
         {
-            string Connection = "server=localhost;uid=root;pwd=1234;";
+            const string Connection = "server=localhost;uid=root;pwd=1234;";
 
             try
 
             {
-                connect = new MySqlConnection();
-                connect.ConnectionString = Connection;
+                connect = new MySqlConnection
+                {
+                    ConnectionString = Connection
+                };
                 connect.Open();
             }
             catch (MySqlException ex)

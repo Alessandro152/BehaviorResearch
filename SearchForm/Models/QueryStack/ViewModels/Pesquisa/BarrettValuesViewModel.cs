@@ -1,8 +1,5 @@
 ﻿
-using System.Collections.Generic;
-using System.Linq;
-
-namespace SearchForm.Models.ViewModels.BarrettValues
+namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
 {
     public class BarrettValuesViewModel
     {

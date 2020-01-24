@@ -1,5 +1,5 @@
 ﻿
-namespace SearchForm.Models.ViewModels.EnfaseEstrategica
+namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
 {
     public class EnfaseEstrategicaViewModel
     {

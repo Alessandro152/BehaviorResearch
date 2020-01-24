@@ -1,5 +1,5 @@
 ﻿
-namespace SearchForm.Models.ViewModels.CaracteristicasDominantes
+namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
 {
     public class CaracteristicasDominantesViewModel
     {

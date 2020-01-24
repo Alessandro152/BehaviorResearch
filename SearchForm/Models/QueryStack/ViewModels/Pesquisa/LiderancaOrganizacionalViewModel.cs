@@ -1,4 +1,4 @@
-﻿namespace SearchForm.Models.ViewModels.LiderancaOrganizacional
+﻿namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
 {
     public class LiderancaOrganizacionalViewModel
     {

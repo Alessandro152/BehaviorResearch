@@ -4,19 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Style/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/StyleSheet.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script type="text/javascript">
         function preventBack() { window.history.forward(); }
         setTimeout("preventBack()", 0);
-        window.onunload = function () { null };
+        window.onunload = function preventBack () { null };
     </script>
 </head>
 <body>
     <div class="MainHeaderImage">
-        <img src="/Images/logo.png">
+        <img src="~/Models/Images/Logo.png">
     </div>
     <div class="container body-content">
         @RenderBody()

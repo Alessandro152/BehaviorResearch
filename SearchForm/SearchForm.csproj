@@ -111,7 +111,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -120,32 +119,32 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Style\StyleSheet.css" />
+    <Content Include="Content\StyleSheet.css" />
     <Content Include="Web.config" />
     <Content Include="Views\Pages\Index.cshtml" />
     <Content Include="Views\Pages\Page2.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\AppServices\SearchFormAppServiceHandler.cs" />
+    <Compile Include="Models\ServiceStack\AppServices\AppServiceHandler.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\PagesController.cs" />
-    <Compile Include="Controllers\Interface\IRepository.cs" />
-    <Compile Include="Domain\SearchFormDomain.cs" />
+    <Compile Include="Models\QueryStack\Interface\IRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infra\Reprositories\Repository.cs" />
-    <Compile Include="Models\ViewModels\BarretValues\BarrettValuesViewModel.cs" />
-    <Compile Include="Models\ViewModels\GlobalViewModel.cs" />
-    <Compile Include="Models\ViewModels\Home\personViewModel.cs" />
-    <Compile Include="Models\ViewModels\CaracteristicasDominantes\CaracteristicasDominantesViewModel.cs" />
-    <Compile Include="Models\ViewModels\ColagemDeOrganizacao\ColagemDeOrganizacaoViewModel.cs" />
-    <Compile Include="Models\ViewModels\CriteriosDeSucesso\CriteriosDeSucessoViewModel.cs" />
-    <Compile Include="Models\ViewModels\EnfaseEstrategica\EnfaseEstrategicaViewModel.cs" />
-    <Compile Include="Models\ViewModels\GestaoDeFuncionarios\GestaoDeFuncionariosViewModel.cs" />
-    <Compile Include="Models\ViewModels\LiderancaOrganizacional\LiderancaOrganizacionalViewModel.cs" />
+    <Compile Include="Models\Infra\Repository.cs" />
+    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\BarrettValuesViewModel.cs" />
+    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\DadosPesquisaViewModel.cs" />
+    <Compile Include="Models\QueryStack\ViewModels\Funcionario\FuncionarioViewModel.cs" />
+    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\CaracteristicasDominantesViewModel.cs" />
+    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\ColagemDeOrganizacaoViewModel.cs" />
+    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\CriteriosDeSucessoViewModel.cs" />
+    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\EnfaseEstrategicaViewModel.cs" />
+    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\GestaoDeFuncionariosViewModel.cs" />
+    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\LiderancaOrganizacionalViewModel.cs" />
+    <Compile Include="Models\ServiceStack\Interface\IAppServiceHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,7 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
+    <Folder Include="Models\Images\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

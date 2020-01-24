@@ -1,6 +1,7 @@
-﻿using SearchForm.Application.AppServices;
-using SearchForm.Controllers.Interface;
-using SearchForm.Models.ViewModels;
+﻿
+using SearchForm.Models.QueryStack.ViewModels.Funcionario;
+using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
+using SearchForm.Models.ServiceStack.Interface;
 using System.Web.Mvc;
 
 namespace SearchForm.Controllers.Principal
@@ -8,85 +9,64 @@ namespace SearchForm.Controllers.Principal
     public class PagesController : Controller
     {
         private const string ERRO = "Dados Incorretos. Lembre-se: Um unico campo nao pode ser maior que 100 e nem a soma dos quatro campos de expectativa ou realidade pode ser maior que 100";
-        private readonly IRepository _repo;
-        private readonly SearchFormAppServiceHandler _appServiceHandler;
+        private readonly IAppServiceHandler _appServiceHandler;
 
         //Construtor do controller. Ele irá instanciar apenas uma vez o repositório
-        public PagesController(IRepository repo, SearchFormAppServiceHandler appServiceHandler)
+        public PagesController(IAppServiceHandler appServiceHandler)
         {
-            _repo = repo;
             _appServiceHandler = appServiceHandler;
         }
 
-        #region PaginaPrincipal
         // GET: Home
         public ActionResult Index()
         {
             return View();
         }
-        #endregion
 
-        #region CaracteristicasDominantes
         [HttpPost]
-        public ActionResult ToPage2View(GlobalViewModel dados)
+        public ActionResult SalvarDadosFuncionario(FuncionarioViewModel dados)
         {
-            TempData["Pessoa"] = new personViewModel()
+            TempData["Pessoa"] = new FuncionarioViewModel()
             {
-                Nome = dados.Pessoa.Nome,
-                Departamento = dados.Pessoa.Departamento,
-                Cargo = dados.Pessoa.Cargo
+                Nome = dados.Nome,
+                Departamento = dados.Departamento,
+                Cargo = dados.Cargo
             };
 
-            return RedirectToAction("Page2");
+            return RedirectToAction("Pesquisa");
         }
 
-        public ActionResult Page2()
+        public ActionResult Pesquisa()
         {
             ViewBag.Alert = string.Empty;
-            if(TempData["Pessoa"] != null) TempData.Keep("Pessoa");
+            if(TempData["Pesquisa"] != null) TempData.Keep("Pesquisa");
             return View();
         }
-        #endregion
 
-        #region Respostas
         [HttpPost]
-        public ActionResult AnswersView(GlobalViewModel dados)
+        public ActionResult SalvarPesquisa(DadosPesquisaViewModel dados)
         {
             bool HasSumError = _appServiceHandler.VerificarCampos(dados);           
 
             if (HasSumError)
             {
                 ViewBag.Alert = ERRO;
-                return View("Page2");
+                return View("Pesquisa");
             }
             else
             {
-                dados.Pessoa = TempData["Pessoa"] as personViewModel;
-                _repo.SalvarRespostas(dados);
-                return RedirectToAction("BarrettValues");
+                dados.Funcionario = TempData["Funcionario"] as FuncionarioViewModel;
+                _appServiceHandler.SalvarRespostas(dados);
+                return View("BarrettValues");
             }
-        }
-        #endregion
-
-        #region BarrettValues
-        public ActionResult BarrettValues()
-        {
-            return View();
         }
 
         [HttpPost]
-        public ActionResult FinishView(GlobalViewModel dados)
+        public ActionResult Finalizar(DadosPesquisaViewModel dados)
         {
-            _repo.SalvarBarrettValues(dados.BarrettValues);
-            return RedirectToAction("Finish");
+            _appServiceHandler.SalvarBarrettValues(dados.BarrettValues);
+            return View("Finish");
         }
-        #endregion
 
-        #region Finish
-        public ActionResult Finish()
-        {
-            return View();
-        }
-        #endregion
     }
 }

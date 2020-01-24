@@ -1,5 +1,5 @@
 ﻿
-namespace SearchForm.Models.ViewModels.GestaoDeFuncionarios
+namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
 {
     public class GestaoDeFuncionariosViewModel
     {

@@ -1,4 +1,4 @@
-﻿@model SearchForm.Models.ViewModels.GlobalViewModel
+﻿@model SearchForm.Models.QueryStack.ViewModels.Funcionario.FuncionarioViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -8,11 +8,11 @@
     <h3>Olá, seja bem-vindo!! preencha seus dados abaixo antes de iniciar a pesquisa</h3>
     <fieldset class="box">
         <div>
-            @using (Html.BeginForm("ToPage2View", "Pages", FormMethod.Post))
+            @using (Html.BeginForm("SalvarDadosFuncionario", "Pages", FormMethod.Post))
             {
-                @Html.TextBoxFor(m => m.Pessoa.Nome, new { @class = "name", @required = "required", placeholder = "Nome Completo", autocomplete = "off" })
-                @Html.TextBoxFor(m => m.Pessoa.Departamento, new { @class = "department", @required = "required", placeholder = "Departamento / Àrea", autocomplete = "off" })
-                @Html.TextBoxFor(m => m.Pessoa.Cargo, new { @class = "ocuppation", @required = "required", placeholder = "Cargo", autocomplete = "off" })
+                @Html.TextBoxFor(m => m.Nome, new { @class = "name", @required = "required", placeholder = "Nome Completo", autocomplete = "off" })
+                @Html.TextBoxFor(m => m.Departamento, new { @class = "department", @required = "required", placeholder = "Departamento / Àrea", autocomplete = "off" })
+                @Html.TextBoxFor(m => m.Cargo, new { @class = "ocuppation", @required = "required", placeholder = "Cargo", autocomplete = "off" })
                 <br />
                 <input class="submitData" type="submit" value="Próximo" />
             }

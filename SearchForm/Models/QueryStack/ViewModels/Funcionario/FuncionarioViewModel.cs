@@ -1,7 +1,7 @@
 ﻿
-namespace SearchForm.Models.ViewModels
+namespace SearchForm.Models.QueryStack.ViewModels.Funcionario
 {
-    public class personViewModel
+    public class FuncionarioViewModel
     {
         public string Nome { get; set; }
         public string Departamento { get; set; }

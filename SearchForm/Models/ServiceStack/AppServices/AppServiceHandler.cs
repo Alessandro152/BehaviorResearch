@@ -1,20 +1,38 @@
 ﻿
-using SearchForm.Models.ViewModels;
-namespace SearchForm.Domain
-{
-    public class SearchFormDomain
-    {
-        int LetraAExpect;
-        int LetraAReal;
-        int LetraBExpect;
-        int LetraBReal;
-        int LetraCExpect;
-        int LetraCReal;
-        int LetraDExpect;
-        int LetraDReal;
+using SearchForm.Models.QueryStack.Interface;
+using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
+using SearchForm.Models.ServiceStack.Interface;
 
-        internal bool ValidarCampos(GlobalViewModel dados)
+namespace SearchForm.Models.ServiceStack.AppServices
+{
+    public class AppServiceHandler : IAppServiceHandler
+    {
+        private const int VALOR_CAMPO_EXPECTATIVA_REALIDADE = 200;
+        private int resultado;
+        private readonly IRepository _repo;
+
+        public AppServiceHandler(IRepository repo)
         {
+            _repo = repo;
+        }
+
+        public void SalvarRespostas(DadosPesquisaViewModel dados)
+        {
+            _repo.SalvarRespostas(dados);
+        }
+
+        public void SalvarBarrettValues(BarrettValuesViewModel barrettValues)
+        {
+            _repo.SalvarBarrettValues(barrettValues);
+        }
+
+        public bool VerificarCampos(DadosPesquisaViewModel dados)
+        {
+            int LetraAExpect, LetraAReal;
+            int LetraBExpect, LetraBReal;
+            int LetraCExpect, LetraCReal;
+            int LetraDExpect, LetraDReal;
+
             if (dados.CaracteristicasDominantes != null)
             {
                 int.TryParse(dados.CaracteristicasDominantes.CD_LetraAExpect, out LetraAExpect);
@@ -26,7 +44,12 @@ namespace SearchForm.Domain
                 int.TryParse(dados.CaracteristicasDominantes.CD_LetraDExpect, out LetraDExpect);
                 int.TryParse(dados.CaracteristicasDominantes.CD_LetraDReal, out LetraDReal);
 
-                return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+                resultado =  SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+
+                if(resultado != VALOR_CAMPO_EXPECTATIVA_REALIDADE)
+                {
+                    return true;
+                }
             }
             else if (dados.LiderancaOrganizacional != null)
             {
@@ -39,7 +62,12 @@ namespace SearchForm.Domain
                 int.TryParse(dados.LiderancaOrganizacional.LO_LetraDExpect, out LetraDExpect);
                 int.TryParse(dados.LiderancaOrganizacional.LO_LetraDReal, out LetraDReal);
 
-                return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+                resultado = SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+
+                if (resultado != VALOR_CAMPO_EXPECTATIVA_REALIDADE)
+                {
+                    return true;
+                }
             }
             else if (dados.GestaoDeFuncionarios != null)
             {
@@ -52,7 +80,12 @@ namespace SearchForm.Domain
                 int.TryParse(dados.GestaoDeFuncionarios.GF_LetraDExpect, out LetraDExpect);
                 int.TryParse(dados.GestaoDeFuncionarios.GF_LetraDReal, out LetraDReal);
 
-                return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+                resultado = SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+
+                if (resultado != VALOR_CAMPO_EXPECTATIVA_REALIDADE)
+                {
+                    return true;
+                }
             }
             else if (dados.ColagemDeOrganizacao != null)
             {
@@ -65,7 +98,12 @@ namespace SearchForm.Domain
                 int.TryParse(dados.ColagemDeOrganizacao.CO_LetraDExpect, out LetraDExpect);
                 int.TryParse(dados.ColagemDeOrganizacao.CO_LetraDReal, out LetraDReal);
 
-                return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+                resultado = SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+
+                if (resultado != VALOR_CAMPO_EXPECTATIVA_REALIDADE)
+                {
+                    return true;
+                }
             }
             else if (dados.EnfaseEstrategica != null)
             {
@@ -78,7 +116,12 @@ namespace SearchForm.Domain
                 int.TryParse(dados.EnfaseEstrategica.EE_LetraDExpect, out LetraDExpect);
                 int.TryParse(dados.EnfaseEstrategica.EE_LetraDReal, out LetraDReal);
 
-                return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+                resultado = SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+
+                if (resultado != VALOR_CAMPO_EXPECTATIVA_REALIDADE)
+                {
+                    return true;
+                }
             }
             else if (dados.CriteriosDeSucesso != null)
             {
@@ -91,24 +134,20 @@ namespace SearchForm.Domain
                 int.TryParse(dados.CriteriosDeSucesso.CS_LetraDExpect, out LetraDExpect);
                 int.TryParse(dados.CriteriosDeSucesso.CS_LetraDReal, out LetraDReal);
 
-                return SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+                resultado = SomarValores(LetraAExpect, LetraAReal, LetraBExpect, LetraBReal, LetraCExpect, LetraCReal, LetraDExpect, LetraDReal);
+
+                if (resultado != VALOR_CAMPO_EXPECTATIVA_REALIDADE)
+                {
+                    return true;
+                }
             }
+
             return false;
         }
 
-        //Soma os campos EXPECTATIVA e REALIDADE. Se ultrapassar em 100, retorna alerta ao usuário de que está errado.
-        private bool SomarValores(int LetraAExpect, int LetraAReal, int LetraBExpect, int LetraBReal, int LetraCExpect, int LetraCReal, int LetraDExpect, int LetraDReal)
+        private int SomarValores(int LetraAExpect, int LetraAReal, int LetraBExpect, int LetraBReal, int LetraCExpect, int LetraCReal, int LetraDExpect, int LetraDReal)
         {
-            if (LetraAExpect > 100 || LetraAReal > 100 || LetraBExpect > 100 || LetraBReal > 100 || LetraCExpect > 100 || LetraCReal > 100 || LetraDExpect > 100 || LetraDReal > 100)
-            {
-                return true;
-            }
-            else if ((LetraAExpect + LetraBExpect + LetraCExpect + LetraDExpect > 100 || LetraAExpect + LetraBExpect + LetraCExpect + LetraDExpect < 100) || (LetraAReal + LetraBReal + LetraCReal + LetraDReal > 100 || LetraAReal + LetraBReal + LetraCReal + LetraDReal < 100))
-            {
-                return true;
-            }
-
-            return false;
+            return LetraAExpect + LetraAReal + LetraBExpect + LetraBReal + LetraCExpect + LetraCReal + LetraDExpect + LetraDReal;
         }
     }
 }
