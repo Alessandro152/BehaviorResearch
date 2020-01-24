@@ -13,7 +13,7 @@
 </div>
 <div>
     <div>
-        @if (ViewBag.Alert != string.Empty)
+        @if (ViewBag.Alert != string.Empty && ViewBag.Alert != null)
         {
             <script type="text/javascript">
                 alert('@ViewBag.Alert');

@@ -6,7 +6,7 @@ namespace SearchForm.Models.ServiceStack.Interface
     public interface IAppServiceHandler
     {
         bool VerificarCampos(DadosPesquisaViewModel dados);
-        void SalvarBarrettValues(BarrettValuesViewModel barrettValues);
-        void SalvarRespostas(DadosPesquisaViewModel dados);
+        object AdicionarDados(DadosPesquisaViewModel dados);
+        void SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa);
     }
 }

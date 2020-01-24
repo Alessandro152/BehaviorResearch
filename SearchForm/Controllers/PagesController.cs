@@ -2,6 +2,7 @@
 using SearchForm.Models.QueryStack.ViewModels.Funcionario;
 using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
 using SearchForm.Models.ServiceStack.Interface;
+using System;
 using System.Web.Mvc;
 
 namespace SearchForm.Controllers.Principal
@@ -26,7 +27,7 @@ namespace SearchForm.Controllers.Principal
         [HttpPost]
         public ActionResult SalvarDadosFuncionario(FuncionarioViewModel dados)
         {
-            TempData["Pessoa"] = new FuncionarioViewModel()
+            TempData["Funcionario"] = new FuncionarioViewModel()
             {
                 Nome = dados.Nome,
                 Departamento = dados.Departamento,
@@ -38,9 +39,8 @@ namespace SearchForm.Controllers.Principal
 
         public ActionResult Pesquisa()
         {
-            ViewBag.Alert = string.Empty;
-            if(TempData["Pesquisa"] != null) TempData.Keep("Pesquisa");
-            return View();
+            if(TempData["Funcionario"] != null) TempData.Keep("Funcionario");
+            return View("Page2");
         }
 
         [HttpPost]
@@ -51,20 +51,21 @@ namespace SearchForm.Controllers.Principal
             if (HasSumError)
             {
                 ViewBag.Alert = ERRO;
-                return View("Pesquisa");
+                return View("Page2");
             }
             else
             {
                 dados.Funcionario = TempData["Funcionario"] as FuncionarioViewModel;
-                _appServiceHandler.SalvarRespostas(dados);
+                TempData["DadosPesquisa"] = _appServiceHandler.AdicionarDados(dados);
                 return View("BarrettValues");
             }
         }
 
         [HttpPost]
-        public ActionResult Finalizar(DadosPesquisaViewModel dados)
+        public ActionResult Finalizar(BarrettValuesViewModel dados)
         {
-            _appServiceHandler.SalvarBarrettValues(dados.BarrettValues);
+            var pesquisa = TempData["DadosPesquisa"] as DadosPesquisaViewModel;
+            _appServiceHandler.SalvarPesquisa(dados, pesquisa);
             return View("Finish");
         }
 

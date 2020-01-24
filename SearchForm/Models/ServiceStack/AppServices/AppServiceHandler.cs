@@ -1,5 +1,6 @@
 ﻿
 using SearchForm.Models.QueryStack.Interface;
+using SearchForm.Models.QueryStack.ViewModels.Funcionario;
 using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
 using SearchForm.Models.ServiceStack.Interface;
 
@@ -16,14 +17,9 @@ namespace SearchForm.Models.ServiceStack.AppServices
             _repo = repo;
         }
 
-        public void SalvarRespostas(DadosPesquisaViewModel dados)
+        public void SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa)
         {
-            _repo.SalvarRespostas(dados);
-        }
-
-        public void SalvarBarrettValues(BarrettValuesViewModel barrettValues)
-        {
-            _repo.SalvarBarrettValues(barrettValues);
+            _repo.SalvarPesquisa(dados, pesquisa);
         }
 
         public bool VerificarCampos(DadosPesquisaViewModel dados)
@@ -51,7 +47,7 @@ namespace SearchForm.Models.ServiceStack.AppServices
                     return true;
                 }
             }
-            else if (dados.LiderancaOrganizacional != null)
+            if (dados.LiderancaOrganizacional != null)
             {
                 int.TryParse(dados.LiderancaOrganizacional.LO_LetraAExpect, out LetraAExpect);
                 int.TryParse(dados.LiderancaOrganizacional.LO_LetraAReal, out LetraAReal);
@@ -69,7 +65,7 @@ namespace SearchForm.Models.ServiceStack.AppServices
                     return true;
                 }
             }
-            else if (dados.GestaoDeFuncionarios != null)
+            if (dados.GestaoDeFuncionarios != null)
             {
                 int.TryParse(dados.GestaoDeFuncionarios.GF_LetraAExpect, out LetraAExpect);
                 int.TryParse(dados.GestaoDeFuncionarios.GF_LetraAReal, out LetraAReal);
@@ -87,7 +83,7 @@ namespace SearchForm.Models.ServiceStack.AppServices
                     return true;
                 }
             }
-            else if (dados.ColagemDeOrganizacao != null)
+            if (dados.ColagemDeOrganizacao != null)
             {
                 int.TryParse(dados.ColagemDeOrganizacao.CO_LetraAExpect, out LetraAExpect);
                 int.TryParse(dados.ColagemDeOrganizacao.CO_LetraAReal, out LetraAReal);
@@ -105,7 +101,7 @@ namespace SearchForm.Models.ServiceStack.AppServices
                     return true;
                 }
             }
-            else if (dados.EnfaseEstrategica != null)
+            if (dados.EnfaseEstrategica != null)
             {
                 int.TryParse(dados.EnfaseEstrategica.EE_LetraAExpect, out LetraAExpect);
                 int.TryParse(dados.EnfaseEstrategica.EE_LetraAReal, out LetraAReal);
@@ -123,7 +119,7 @@ namespace SearchForm.Models.ServiceStack.AppServices
                     return true;
                 }
             }
-            else if (dados.CriteriosDeSucesso != null)
+            if (dados.CriteriosDeSucesso != null)
             {
                 int.TryParse(dados.CriteriosDeSucesso.CS_LetraAExpect, out LetraAExpect);
                 int.TryParse(dados.CriteriosDeSucesso.CS_LetraAReal, out LetraAReal);
@@ -149,5 +145,92 @@ namespace SearchForm.Models.ServiceStack.AppServices
         {
             return LetraAExpect + LetraAReal + LetraBExpect + LetraBReal + LetraCExpect + LetraCReal + LetraDExpect + LetraDReal;
         }
+        public object AdicionarDados(DadosPesquisaViewModel dados)
+        {
+            DadosPesquisaViewModel dadosPesquisa = new DadosPesquisaViewModel()
+            {
+                Funcionario = new FuncionarioViewModel
+                {
+                    Nome = dados.Funcionario.Nome,
+                    Departamento = dados.Funcionario.Departamento,
+                    Cargo = dados.Funcionario.Cargo
+                },
+
+                CaracteristicasDominantes = new CaracteristicasDominantesViewModel
+                {
+                    CD_LetraAExpect = dados.CaracteristicasDominantes.CD_LetraAExpect,
+                    CD_LetraAReal = dados.CaracteristicasDominantes.CD_LetraAReal,
+                    CD_LetraBExpect = dados.CaracteristicasDominantes.CD_LetraBExpect,
+                    CD_LetraBReal = dados.CaracteristicasDominantes.CD_LetraBReal,
+                    CD_LetraCExpect = dados.CaracteristicasDominantes.CD_LetraCExpect,
+                    CD_LetraCReal = dados.CaracteristicasDominantes.CD_LetraCReal,
+                    CD_LetraDExpect = dados.CaracteristicasDominantes.CD_LetraDExpect,
+                    CD_LetraDReal = dados.CaracteristicasDominantes.CD_LetraDReal
+                },
+
+                GestaoDeFuncionarios = new GestaoDeFuncionariosViewModel
+                {
+                    GF_LetraAExpect = dados.GestaoDeFuncionarios.GF_LetraAExpect,
+                    GF_LetraAReal = dados.GestaoDeFuncionarios.GF_LetraAReal,
+                    GF_LetraBExpect = dados.GestaoDeFuncionarios.GF_LetraBExpect,
+                    GF_LetraBReal = dados.GestaoDeFuncionarios.GF_LetraBReal,
+                    GF_LetraCExpect = dados.GestaoDeFuncionarios.GF_LetraCExpect,
+                    GF_LetraCReal = dados.GestaoDeFuncionarios.GF_LetraCReal,
+                    GF_LetraDExpect = dados.GestaoDeFuncionarios.GF_LetraDExpect,
+                    GF_LetraDReal = dados.GestaoDeFuncionarios.GF_LetraDReal
+                },
+
+                ColagemDeOrganizacao = new ColagemDeOrganizacaoViewModel
+                {
+                    CO_LetraAExpect = dados.ColagemDeOrganizacao.CO_LetraAExpect,
+                    CO_LetraAReal = dados.ColagemDeOrganizacao.CO_LetraAReal,
+                    CO_LetraBExpect = dados.ColagemDeOrganizacao.CO_LetraBExpect,
+                    CO_LetraBReal = dados.ColagemDeOrganizacao.CO_LetraBReal,
+                    CO_LetraCExpect = dados.ColagemDeOrganizacao.CO_LetraCExpect,
+                    CO_LetraCReal = dados.ColagemDeOrganizacao.CO_LetraCReal,
+                    CO_LetraDExpect = dados.ColagemDeOrganizacao.CO_LetraDExpect,
+                    CO_LetraDReal = dados.ColagemDeOrganizacao.CO_LetraDReal
+                },
+
+                LiderancaOrganizacional = new LiderancaOrganizacionalViewModel
+                {
+                    LO_LetraAExpect = dados.LiderancaOrganizacional.LO_LetraAExpect,
+                    LO_LetraAReal = dados.LiderancaOrganizacional.LO_LetraAReal,
+                    LO_LetraBExpect = dados.LiderancaOrganizacional.LO_LetraBExpect,
+                    LO_LetraBReal = dados.LiderancaOrganizacional.LO_LetraBReal,
+                    LO_LetraCExpect = dados.LiderancaOrganizacional.LO_LetraCExpect,
+                    LO_LetraCReal = dados.LiderancaOrganizacional.LO_LetraCReal,
+                    LO_LetraDExpect = dados.LiderancaOrganizacional.LO_LetraDExpect,
+                    LO_LetraDReal = dados.LiderancaOrganizacional.LO_LetraDReal
+                },
+
+                EnfaseEstrategica = new EnfaseEstrategicaViewModel
+                {
+                    EE_LetraAExpect = dados.EnfaseEstrategica.EE_LetraAExpect,
+                    EE_LetraAReal = dados.EnfaseEstrategica.EE_LetraAReal,
+                    EE_LetraBExpect = dados.EnfaseEstrategica.EE_LetraBExpect,
+                    EE_LetraBReal = dados.EnfaseEstrategica.EE_LetraBReal,
+                    EE_LetraCExpect = dados.EnfaseEstrategica.EE_LetraCExpect,
+                    EE_LetraCReal = dados.EnfaseEstrategica.EE_LetraCReal,
+                    EE_LetraDExpect = dados.EnfaseEstrategica.EE_LetraDExpect,
+                    EE_LetraDReal = dados.EnfaseEstrategica.EE_LetraDReal
+                },
+
+                CriteriosDeSucesso = new CriteriosDeSucessoViewModel
+                {
+                    CS_LetraAExpect = dados.CriteriosDeSucesso.CS_LetraAExpect,
+                    CS_LetraAReal = dados.CriteriosDeSucesso.CS_LetraAReal,
+                    CS_LetraBExpect = dados.CriteriosDeSucesso.CS_LetraBExpect,
+                    CS_LetraBReal = dados.CriteriosDeSucesso.CS_LetraBReal,
+                    CS_LetraCExpect = dados.CriteriosDeSucesso.CS_LetraCExpect,
+                    CS_LetraCReal = dados.CriteriosDeSucesso.CS_LetraCReal,
+                    CS_LetraDExpect = dados.CriteriosDeSucesso.CS_LetraDExpect,
+                    CS_LetraDReal = dados.CriteriosDeSucesso.CS_LetraDReal
+                }
+            };
+
+            return dadosPesquisa;
+        }
+
     }
 }

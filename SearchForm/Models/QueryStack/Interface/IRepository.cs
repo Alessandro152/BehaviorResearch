@@ -5,7 +5,6 @@ namespace SearchForm.Models.QueryStack.Interface
 {
     public interface IRepository
     {
-        void SalvarRespostas(DadosPesquisaViewModel dados);
-        void SalvarBarrettValues(BarrettValuesViewModel barrettValues);
+        void SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa);
     }
 }

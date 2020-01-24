@@ -1,5 +1,7 @@
-using SearchForm.Controllers.Interface;
-using SearchForm.Infra.Reprositories;
+using SearchForm.Models.Infra;
+using SearchForm.Models.QueryStack.Interface;
+using SearchForm.Models.ServiceStack.AppServices;
+using SearchForm.Models.ServiceStack.Interface;
 using System;
 using System.Web.Mvc;
 using Unity;
@@ -50,6 +52,7 @@ namespace SearchForm
         public static void RegistraComponentes()
         {
             var container = new UnityContainer();
+            container.RegisterType<IAppServiceHandler, AppServiceHandler>();
             container.RegisterType<IRepository, Repository>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
