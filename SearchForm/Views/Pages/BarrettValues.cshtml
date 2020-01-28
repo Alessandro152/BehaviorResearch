@@ -3,246 +3,342 @@
     ViewBag.Title = "BarrettValues";
 }
 <div>
-    <h3>Valores de Barrett - Abaixo segue 75 valores que você acha que deve ser aplicado na sua empresa. Destes 75, marque <b>APENAS</b> os 10 melhores.</h3>
+    <h4>Valores de Barrett - Abaixo segue 75 valores que você acha que deve ser aplicado na sua empresa. Destes 75, marque <b>APENAS</b> os 10 melhores.</h4>
 </div>
+
 <div>
-    <div>
-        @using (Html.BeginForm("Finalizar", "Pages"))
-        {
-            <table class="ColumnOne">
+    @using (Html.BeginForm("Finalizar", "Pages"))
+    {
+        <table class="table table-hover">
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.SensoDeDono) 1 - SENSO DE DONO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Adaptabilidade) 2 - ADAPTABILIDADE</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.SerOMelhor) 3 - SER O MELHOR</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ImagemDaMarca) 4 - IMAGEM DA MARCA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ImportarSe) 5 - CUIDAR/IMPORTAR-SE</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Clareza) 6 - CLAREZA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Comprometimento) 7 - COMPROMETIMENTO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Compaixao) 8 - COMPAIXÃO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Confusao) 9 - CONFUSÃO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.AprendizagemContinua) 10 - APRENDIZAGEM CONTÍNUA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Cooperacao) 11 - COOPERAÇÃO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Coragem) 12 - CORAGEM</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ColaboracaoEntreGrupos) 13 - COLABORAÇÃO ENTRE GRUPOS</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ColaboracaoComCliente) 14 - COLABORAÇÃO COM O CLIENTE</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ConfortoComIncertezas) 15 - CONFORTO COM INCERTEZAS</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ValorizandoADiversidade) 16 - VALORIZANDO A DIVERSIDADE</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.EngajamentoDosFuncionarios) 17 - ENGAJAMENTO DOS FUNCIONÁRIOS</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.SaudeDoFuncionario) 18 - SAÚDE DO FUNCIONÁRIO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Empoderar) 19 - EMPODERAR</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Entusiasmo) 20 - ENTUSIASMO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ConscienciaAmbiental) 21 - CONSCIÊNCIA AMBIENTAL</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Etica) 22 - ÉTICA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Experiencia) 23 - EXPERIÊNCIA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Imparcialidade) 24 - IMPARCIALIDADE</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Perdao) 25 - PERDÃO</th>
-                </tr>
-            </table>
-            <table class="ColumnTwo">
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.AtingirObjetivos) 26 - ATINGIR OBJETIVOS</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Equilibrio) 27 - EQUILIBRIO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Culpar) 28- CULPAR</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Burocracia) 29 - BUROCRACIA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Cautela) 30 - CAUTELA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Coaching) 31 - COACHING/MENTORING</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.EnvolvimentoComunitario) 32 - ENVOLVIMENTO COMUNITARIO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.SolucaoDeConflitos) 33 - SOLUÇÃO DE CONFLITOS</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.MelhoriaContinua) 34 - MELHORIA CONTÍNUA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Controle) 35 - CONTROLE</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ReducaoDeCustos) 36 - REDUÇÃO DE CUSTOS</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Criatividade) 37 - CRIATIVIDADE</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Curiosidade) 38 - CURIOSIDADE</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.SatisfacaoDoCliente) 39 - SATISFAÇÃO DO CLIENTE</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Eficiencia) 40 - EFICIÊNCIA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ExpandirPoder) 41 - EXPANDIR PODER/DOMINAR</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.RealizacaoDoFuncionario) 42 - REALIZAÇÃO DO FUNCIONÁRIO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ReconhecimentoDoFuncionario) 43 - RECONHECIMENTO DO FUNCIONÁRIO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Encorajamento) 44 - ENCORAJAMENTO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Empreendedorismo) 45 - EMPREENDEDORISMO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Igualdade) 46 - IGUALDADE</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Excelencia) 47 - EXCELÊNCIA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Exploracao) 48 - EXPLORAÇÃO</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.EstabilidadeFinanceira) 49 - ESTABILIDADE FINANCEIRA</th>
-                </tr>
-                <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.PreocupacaoComFuturasGeracoes) 50 - PREOCUPAÇÃO COM FUTURAS GERAÇÕES</th>
-                </tr>
-            </table>
-            <table class="ColumnThree">
-                <tr>
-                    <th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.SensoDeDono) 1 - SENSO DE DONO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.AtingirObjetivos) 26 - ATINGIR OBJETIVOS
+                    </td>
+                    <td>
                         @Html.CheckBoxFor(m => m.BarrettValues.LiderancaGlobal) 51 - LIDERANÇA GLOBAL
-                    </th>
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.OrientadoParaObjetivos) 52 - ORIENTADO PARA OBJETIVOS</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Adaptabilidade) 2 - ADAPTABILIDADE
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Equilibrio) 27 - EQUILIBRIO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.OrientadoParaObjetivos) 52 - ORIENTADO PARA OBJETIVOS
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Hierarquia) 53 - HIERARQUIA</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.SerOMelhor) 3 - SER O MELHOR
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Culpar) 28- CULPAR
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Hierarquia) 53 - HIERARQUIA
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.PensamentoHolistico) 54 - PENSAMENTO HOLÍSTICO</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ImagemDaMarca) 4 - IMAGEM DA MARCA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Burocracia) 29 - BUROCRACIA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.PensamentoHolistico) 54 - PENSAMENTO HOLÍSTICO
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Honestidade) 55 - HONESTIDADE</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ImportarSe) 5 - CUIDAR/IMPORTAR-SE
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Cautela) 30 - CAUTELA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Honestidade) 55 - HONESTIDADE
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.DireitosHumanos) 56 - DIREITOS HUMANOS</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Clareza) 6 - CLAREZA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Coaching) 31 - COACHING/MENTORING
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.DireitosHumanos) 56 - DIREITOS HUMANOS
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.HumorAlegria) 57 - HUMOR/ALEGRIA</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Comprometimento) 7 - COMPROMETIMENTO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.EnvolvimentoComunitario) 32 - ENVOLVIMENTO COMUNITARIO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.HumorAlegria) 57 - HUMOR/ALEGRIA
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.CapacidadeDeInclusao) 58 - CAPACIDADE DE INCLUSÃO</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Compaixao) 8 - COMPAIXÃO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.SolucaoDeConflitos) 33 - SOLUÇÃO DE CONFLITOS
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.CapacidadeDeInclusao) 58 - CAPACIDADE DE INCLUSÃO
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ReterInformacoes) 59 - RETER INFORMAÇÕES</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Confusao) 9 - CONFUSÃO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.MelhoriaContinua) 34 - MELHORIA CONTÍNUA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ReterInformacoes) 59 - RETER INFORMAÇÕES
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.CompartilharInformacoes) 60 - COMPARTILHAR INFORMAÇÕES</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.AprendizagemContinua) 10 - APRENDIZAGEM CONTÍNUA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Controle) 35 - CONTROLE
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.CompartilharInformacoes) 60 - COMPARTILHAR INFORMAÇÕES
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Iniciativa) 61 - INICIATIVA</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Cooperacao) 11 - COOPERAÇÃO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ReducaoDeCustos) 36 - REDUÇÃO DE CUSTOS
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Iniciativa) 61 - INICIATIVA
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Inovacao) 62 - INOVAÇÃO</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Coragem) 12 - CORAGEM
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Criatividade) 37 - CRIATIVIDADE
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Inovacao) 62 - INOVAÇÃO
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Integridade) 63 - INTEGRIDADE</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ColaboracaoEntreGrupos) 13 - COLABORAÇÃO ENTRE GRUPOS
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Curiosidade) 38 - CURIOSIDADE
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Integridade) 63 - INTEGRIDADE
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.CompeticaoInterna) 64 - COMPETIÇÃO INTERNA</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ColaboracaoComCliente) 14 - COLABORAÇÃO COM O CLIENTE
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.SatisfacaoDoCliente) 39 - SATISFAÇÃO DO CLIENTE
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.CompeticaoInterna) 64 - COMPETIÇÃO INTERNA
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.InsegurancaDoEmprego) 65 - INSEGURANÇA DO EMPREGO</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ConfortoComIncertezas) 15 - CONFORTO COM INCERTEZAS
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Eficiencia) 40 - EFICIÊNCIA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.InsegurancaDoEmprego) 65 - INSEGURANÇA DO EMPREGO
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.DesenvolvimentoDaLideranca) 66 - DESENVOLVIMENTO DA LIDERANÇA</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ValorizandoADiversidade) 16 - VALORIZANDO A DIVERSIDADE
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ExpandirPoder) 41 - EXPANDIR PODER/DOMINAR
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.DesenvolvimentoDaLideranca) 66 - DESENVOLVIMENTO DA LIDERANÇA
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.LiderandoPeloExemplo) 67 - LIDERANDO PELO EXEMPLO</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.EngajamentoDosFuncionarios) 17 - ENGAJAMENTO DOS FUNCIONÁRIOS
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.RealizacaoDoFuncionario) 42 - REALIZAÇÃO DO FUNCIONÁRIO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.LiderandoPeloExemplo) 67 - LIDERANDO PELO EXEMPLO
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Escutar) 68 - ESCUTAR</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.SaudeDoFuncionario) 18 - SAÚDE DO FUNCIONÁRIO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ReconhecimentoDoFuncionario) 43 - RECONHECIMENTO DO FUNCIONÁRIO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Escutar) 68 - ESCUTAR
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.TrabalhoExcessivo) 69 - TRABALHO EXCESSIVO</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Empoderar) 19 - EMPODERAR
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Encorajamento) 44 - ENCORAJAMENTO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.TrabalhoExcessivo) 69 - TRABALHO EXCESSIVO
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.PerspectivaDeLongoPrazo) 70 - PERSPECTIVA DE LONGO PRAZO</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Entusiasmo) 20 - ENTUSIASMO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Empreendedorismo) 45 - EMPREENDEDORISMO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.PerspectivaDeLongoPrazo) 70 - PERSPECTIVA DE LONGO PRAZO
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.FazerADiferenca) 71 - FAZER A DIFERENÇA</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ConscienciaAmbiental) 21 - CONSCIÊNCIA AMBIENTAL
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Igualdade) 46 - IGUALDADE
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.FazerADiferenca) 71 - FAZER A DIFERENÇA
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Manipulacao) 72 - MANIPULAÇÃO</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Etica) 22 - ÉTICA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Excelencia) 47 - EXCELÊNCIA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Manipulacao) 72 - MANIPULAÇÃO
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.FocoNaMissao) 73 - FOCO NA MISSÃO</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Experiencia) 23 - EXPERIÊNCIA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Exploracao) 48 - EXPLORAÇÃO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.FocoNaMissao) 73 - FOCO NA MISSÃO
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.ComunicaoAberta) 74 - COMUNICAÇÃO ABERTA</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Imparcialidade) 24 - IMPARCIALIDADE
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.EstabilidadeFinanceira) 49 - ESTABILIDADE FINANCEIRA
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.ComunicaoAberta) 74 - COMUNICAÇÃO ABERTA
+                    </td>
                 </tr>
+            </tbody>
+            <tbody>
                 <tr>
-                    <th>@Html.CheckBoxFor(m => m.BarrettValues.Abertura) 75 - ABERTURA</th>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Perdao) 25 - PERDÃO
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.PreocupacaoComFuturasGeracoes) 50 - PREOCUPAÇÃO COM FUTURAS GERAÇÕES
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(m => m.BarrettValues.Abertura) 75 - ABERTURA
+                    </td>
                 </tr>
-            </table>
-            <input class="submitData" type="submit" value="Finalizar" />
-        }
-    </div>
+            </tbody>
+
+        </table>
+
+        <input class="submitData" type="submit" value="Finalizar" />
+    }
 </div>
+

@@ -46,12 +46,7 @@ h3 {
     transition: 0.25s;
 }
 
-.name:hover, .department:hover, .ocuppation:hover {
-    width: 280px;
-    border: 2px solid #0074D9;
-}
-
-.name:focus, .department:focus, .ocuppation:focus {
+.name:hover, .department:hover, .ocuppation:hover, .name:focus, .department:focus, .ocuppation:focus {
     width: 280px;
     border: 2px solid #0074D9;
 }
@@ -114,23 +109,6 @@ h3 {
     margin-left: 5px;
 }
 
-.ColumnOne, .ColumnTwo, .ColumnThree {
-    margin-left: 10%;
-    font: 11px sans-serif;
-    width: 250px;
-}
-
-.ColumnTwo {
-    margin-top: -47%;
-    margin-left: 35%;
-    width: 300px;
-}
-
-.ColumnThree {
-    margin-top: -48%;
-    margin-left: 63%;
-}
-
 .TextBox {
     margin: -36px 0px 0px 85%;
 }
@@ -138,7 +116,7 @@ h3 {
 .ImageExemple {
     margin: 0% 0px 0px 0%;
     height: 100px;
-    transition: 0.25s;
+    transition: 0.55s;
 }
 
 .ImageExemple:hover {

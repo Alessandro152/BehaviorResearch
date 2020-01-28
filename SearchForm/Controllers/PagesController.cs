@@ -2,7 +2,6 @@
 using SearchForm.Models.QueryStack.ViewModels.Funcionario;
 using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
 using SearchForm.Models.ServiceStack.Interface;
-using System;
 using System.Web.Mvc;
 
 namespace SearchForm.Controllers.Principal
@@ -68,6 +67,5 @@ namespace SearchForm.Controllers.Principal
             _appServiceHandler.SalvarPesquisa(dados, pesquisa);
             return View("Finish");
         }
-
     }
 }

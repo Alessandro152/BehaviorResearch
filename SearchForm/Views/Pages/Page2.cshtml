@@ -9,7 +9,7 @@
         A seguir, você responderá 6 questionários da seguinte maneira: Você tem 100 pontos e deve distribuí-los nas quatro alternativas abaixo.
         Cada campo EXPECTATIVA OU REALIDADE deve receber um valor de forma que a soma destes campos chegue a 100. Passe o mouse sobre o exemplo antes de começar.
     </h3>
-    <img src="/Images/Exemplo.png" class="ImageExemple">
+    <img src="~/Models/Images/Exemplo.png" class="ImageExemple">
 </div>
 <div>
     <div>
@@ -30,10 +30,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.CaracteristicasDominantes.CD_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.CaracteristicasDominantes.CD_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -41,10 +41,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.CaracteristicasDominantes.CD_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.CaracteristicasDominantes.CD_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -52,10 +52,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.CaracteristicasDominantes.CD_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.CaracteristicasDominantes.CD_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -63,13 +63,13 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.CaracteristicasDominantes.CD_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.CaracteristicasDominantes.CD_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
-                <br />
+                <hr />
                 <div>
                     <h4 class="QuestionTitle">Pergunta 2 - Liderança Organizacional</h4>
                 </div>
@@ -78,10 +78,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -89,10 +89,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -100,10 +100,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -111,13 +111,13 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.LiderancaOrganizacional.LO_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
-                <br />
+                <hr />
                 <div>
                     <h4 class="QuestionTitle">Pergunta 3 - Gestão de Funcionários</h4>
                 </div>
@@ -126,10 +126,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -137,10 +137,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -148,10 +148,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -159,13 +159,13 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.GestaoDeFuncionarios.GF_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
-                <br />
+                <hr />
                 <div>
                     <h4 class="QuestionTitle">Pergunta 4 - Colagem De Organização</h4>
                 </div>
@@ -174,10 +174,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -185,10 +185,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -196,10 +196,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -207,13 +207,13 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.ColagemDeOrganizacao.CO_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
-                <br />
+                <hr />
                 <div>
                     <h4 class="QuestionTitle">Pergunta 5 - Ênfase Estratégica</h4>
                 </div>
@@ -222,10 +222,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -233,10 +233,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -244,10 +244,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -255,13 +255,13 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.EnfaseEstrategica.EE_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
-                <br />
+                <hr />
                 <div>
                     <h4 class="QuestionTitle">Pergunta 6 - Critérios De Sucesso</h4>
                 </div>
@@ -270,10 +270,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraAExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraAReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -281,10 +281,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraBExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraBReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -292,10 +292,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraCExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraCReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
                 <div class="QuestionDescription">
@@ -303,10 +303,10 @@
                 </div>
                 <table class="TextBox">
                     <tr>
-                        <th>
+                        <td>
                             @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraDExpect, new { @class = "expectForm", @required = "required", placeholder = "Expectativa", autocomplete = "off" })
                             @Html.TextBoxFor(m => m.CriteriosDeSucesso.CS_LetraDReal, new { @class = "realForm", @required = "required", placeholder = "Realidade", autocomplete = "off" })
-                        </th>
+                        </td>
                     </tr>
                 </table>
             </div>
