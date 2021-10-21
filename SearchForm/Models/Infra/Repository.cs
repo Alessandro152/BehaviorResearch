@@ -3,34 +3,37 @@ using SearchForm.Models.QueryStack.Interface;
 using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
 using System;
 using System.Data;
-
+using System.Threading.Tasks;
 
 namespace SearchForm.Models.Infra
 {
     public class Repository : IRepository
     {
         private MySqlConnection connect;
+
         public MySqlConnection DatabaseConnection { get; private set; }
 
-        public void SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa)
+        public Task<bool> SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa)
         {
             try
             {
                 MySqlCommand Comm;
-                DatabaseConnection = conexaoBanco();
+                DatabaseConnection = ConectarBanco();
+
+                if (DatabaseConnection.State != ConnectionState.Open) return Task.FromResult(false);
 
                 Comm = DatabaseConnection.CreateCommand();
 
                 Comm.CommandText = "USE FORMULARIO";
                 Comm.ExecuteNonQuery();
 
-                Comm.CommandText = "INSERT INTO PESSOA (NOME, DEPARTAMENTO, CARGO) VALUES(@NOME, @DEPARTAMENTO, @CARGO)";
+                Comm.CommandText = "INSERT INTO PESSOA VALUES(?, ?, ?)";
                 Comm.Parameters.AddWithValue("@NOME", pesquisa.Funcionario.Nome);
                 Comm.Parameters.AddWithValue("@DEPARTAMENTO", pesquisa.Funcionario.Departamento);
                 Comm.Parameters.AddWithValue("@CARGO", pesquisa.Funcionario.Cargo);
                 Comm.ExecuteNonQuery();
 
-                Comm.CommandText = "INSERT INTO CARACTERISTICASDOMINANTES (CD_A_EXPECT, CD_A_REAL, CD_B_EXPECT, CD_B_REAL, CD_C_EXPECT, CD_C_REAL, CD_D_EXPECT, CD_D_REAL) VALUES(@CD_A_EXPECT, @CD_A_REAL, @CD_B_EXPECT, @CD_B_REAL, @CD_C_EXPECT, @CD_C_REAL, @CD_D_EXPECT, @CD_D_REAL)";
+                Comm.CommandText = "INSERT INTO CARACTERISTICASDOMINANTES VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
                 Comm.Parameters.AddWithValue("@CD_A_EXPECT", pesquisa.CaracteristicasDominantes.CD_LetraAExpect);
                 Comm.Parameters.AddWithValue("@CD_A_REAL", pesquisa.CaracteristicasDominantes.CD_LetraAReal);
                 Comm.Parameters.AddWithValue("@CD_B_EXPECT", pesquisa.CaracteristicasDominantes.CD_LetraBExpect);
@@ -41,7 +44,7 @@ namespace SearchForm.Models.Infra
                 Comm.Parameters.AddWithValue("@CD_D_REAL", pesquisa.CaracteristicasDominantes.CD_LetraDReal);
                 Comm.ExecuteNonQuery();
 
-                Comm.CommandText = "INSERT INTO LIDERANCAORGANIZACIONAL(LO_A_EXPECT, LO_A_REAL, LO_B_EXPECT, LO_B_REAL, LO_C_EXPECT, LO_C_REAL, LO_D_EXPECT, LO_D_REAL) VALUES(@LO_A_EXPECT, @LO_A_REAL, @LO_B_EXPECT, @LO_B_REAL, @LO_C_EXPECT, @LO_C_REAL, @LO_D_EXPECT, @LO_D_REAL)";
+                Comm.CommandText = "INSERT INTO LIDERANCAORGANIZACIONAL VALUES(@LO_A_EXPECT, @LO_A_REAL, @LO_B_EXPECT, @LO_B_REAL, @LO_C_EXPECT, @LO_C_REAL, @LO_D_EXPECT, @LO_D_REAL)";
                 Comm.Parameters.AddWithValue("@LO_A_EXPECT", pesquisa.LiderancaOrganizacional.LO_LetraAExpect);
                 Comm.Parameters.AddWithValue("@LO_A_REAL", pesquisa.LiderancaOrganizacional.LO_LetraAReal);
                 Comm.Parameters.AddWithValue("@LO_B_EXPECT", pesquisa.LiderancaOrganizacional.LO_LetraBExpect);
@@ -52,7 +55,7 @@ namespace SearchForm.Models.Infra
                 Comm.Parameters.AddWithValue("@LO_D_REAL", pesquisa.LiderancaOrganizacional.LO_LetraDReal);
                 Comm.ExecuteNonQuery();
 
-                Comm.CommandText = "INSERT INTO GESTAODEFUNCIONARIOS(GF_A_EXPECT, GF_A_REAL, GF_B_EXPECT, GF_B_REAL, GF_C_EXPECT, GF_C_REAL, GF_D_EXPECT, GF_D_REAL) VALUES(@GF_A_EXPECT, @GF_A_REAL, @GF_B_EXPECT, @GF_B_REAL, @GF_C_EXPECT, @GF_C_REAL, @GF_D_EXPECT, @GF_D_REAL)";
+                Comm.CommandText = "INSERT INTO GESTAODEFUNCIONARIOS VALUES(@GF_A_EXPECT, @GF_A_REAL, @GF_B_EXPECT, @GF_B_REAL, @GF_C_EXPECT, @GF_C_REAL, @GF_D_EXPECT, @GF_D_REAL)";
                 Comm.Parameters.AddWithValue("@GF_A_EXPECT", pesquisa.GestaoDeFuncionarios.GF_LetraAExpect);
                 Comm.Parameters.AddWithValue("@GF_A_REAL", pesquisa.GestaoDeFuncionarios.GF_LetraAReal);
                 Comm.Parameters.AddWithValue("@GF_B_EXPECT", pesquisa.GestaoDeFuncionarios.GF_LetraBExpect);
@@ -63,7 +66,7 @@ namespace SearchForm.Models.Infra
                 Comm.Parameters.AddWithValue("@GF_D_REAL", pesquisa.GestaoDeFuncionarios.GF_LetraDReal);
                 Comm.ExecuteNonQuery();
 
-                Comm.CommandText = "INSERT INTO COLAGEMDEORGANIZACAO(CO_A_EXPECT, CO_A_REAL, CO_B_EXPECT, CO_B_REAL, CO_C_EXPECT, CO_C_REAL, CO_D_EXPECT, CO_D_REAL) VALUES(@CO_A_EXPECT, @CO_A_REAL, @CO_B_EXPECT, @CO_B_REAL, @CO_C_EXPECT, @CO_C_REAL, @CO_D_EXPECT, @CO_D_REAL)";
+                Comm.CommandText = "INSERT INTO COLAGEMDEORGANIZACAO VALUES(@CO_A_EXPECT, @CO_A_REAL, @CO_B_EXPECT, @CO_B_REAL, @CO_C_EXPECT, @CO_C_REAL, @CO_D_EXPECT, @CO_D_REAL)";
                 Comm.Parameters.AddWithValue("@CO_A_EXPECT", pesquisa.ColagemDeOrganizacao.CO_LetraAExpect);
                 Comm.Parameters.AddWithValue("@CO_A_REAL", pesquisa.ColagemDeOrganizacao.CO_LetraAReal);
                 Comm.Parameters.AddWithValue("@CO_B_EXPECT", pesquisa.ColagemDeOrganizacao.CO_LetraBExpect);
@@ -74,7 +77,7 @@ namespace SearchForm.Models.Infra
                 Comm.Parameters.AddWithValue("@CO_D_REAL", pesquisa.ColagemDeOrganizacao.CO_LetraDReal);
                 Comm.ExecuteNonQuery();
 
-                Comm.CommandText = "INSERT INTO ENFASEESTRATEGICA(EE_A_EXPECT, EE_A_REAL, EE_B_EXPECT, EE_B_REAL, EE_C_EXPECT, EE_C_REAL, EE_D_EXPECT, EE_D_REAL) VALUES(@EE_A_EXPECT, @EE_A_REAL, @EE_B_EXPECT, @EE_B_REAL, @EE_C_EXPECT, @EE_C_REAL, @EE_D_EXPECT, @EE_D_REAL)";
+                Comm.CommandText = "INSERT INTO ENFASEESTRATEGICA VALUES(@EE_A_EXPECT, @EE_A_REAL, @EE_B_EXPECT, @EE_B_REAL, @EE_C_EXPECT, @EE_C_REAL, @EE_D_EXPECT, @EE_D_REAL)";
                 Comm.Parameters.AddWithValue("@EE_A_EXPECT", pesquisa.EnfaseEstrategica.EE_LetraAExpect);
                 Comm.Parameters.AddWithValue("@EE_A_REAL", pesquisa.EnfaseEstrategica.EE_LetraAReal);
                 Comm.Parameters.AddWithValue("@EE_B_EXPECT", pesquisa.EnfaseEstrategica.EE_LetraBExpect);
@@ -85,7 +88,7 @@ namespace SearchForm.Models.Infra
                 Comm.Parameters.AddWithValue("@EE_D_REAL", pesquisa.EnfaseEstrategica.EE_LetraDReal);
                 Comm.ExecuteNonQuery();
 
-                Comm.CommandText = "INSERT INTO CRITERIOSDESUCESSO(CS_A_EXPECT, CS_A_REAL, CS_B_EXPECT, CS_B_REAL, CS_C_EXPECT, CS_C_REAL, CS_D_EXPECT, CS_D_REAL) VALUES(@CS_A_EXPECT, @CS_A_REAL, @CS_B_EXPECT, @CS_B_REAL, @CS_C_EXPECT, @CS_C_REAL, @CS_D_EXPECT, @CS_D_REAL)";
+                Comm.CommandText = "INSERT INTO CRITERIOSDESUCESSO VALUES(@CS_A_EXPECT, @CS_A_REAL, @CS_B_EXPECT, @CS_B_REAL, @CS_C_EXPECT, @CS_C_REAL, @CS_D_EXPECT, @CS_D_REAL)";
                 Comm.Parameters.AddWithValue("@CS_A_EXPECT", pesquisa.CriteriosDeSucesso.CS_LetraAExpect);
                 Comm.Parameters.AddWithValue("@CS_A_REAL", pesquisa.CriteriosDeSucesso.CS_LetraAReal);
                 Comm.Parameters.AddWithValue("@CS_B_EXPECT", pesquisa.CriteriosDeSucesso.CS_LetraBExpect);
@@ -96,15 +99,7 @@ namespace SearchForm.Models.Infra
                 Comm.Parameters.AddWithValue("@CS_D_REAL", pesquisa.CriteriosDeSucesso.CS_LetraDReal);
                 Comm.ExecuteNonQuery();
 
-                Comm.CommandText = "INSERT INTO BARRETTVALUES (SENSO_DE_DONO, ATINGIR_OBJETIVOS, ADAPTABILIDADE, EQUILIBRIO, SER_O_MELHOR, CULPAR, IMAGEM_DA_MARCA, BUROCRACIA, IMPORTAR_SE, CAUTELA," +
-                                    "CLAREZA, COACHING, COMPROMETIMENTO, ENVOLVIMENTO_COMUNITARIO, COMPAIXAO, SOLUCAO_DE_CONFLITOS, CONFUSAO, MELHORIA_CONTINUA, APRENDIZAGEM_CONTINUA, CONTROLE, " +
-                                    "COOPERACAO, REDUCAO_DE_CUSTOS, CORAGEM, CRIATIVIDADE, COLABORACAO_ENTRE_GRUPOS, CURIOSIDADE, COLABORACAO_COM_O_CLIENTE, SATISFACAO_DO_CLIENTE, CONFORTO_COM_INCERTEZAS, EFICIENCIA, " +
-                                    "VALORIZANDO_A_DIVERSIDADE, EXPANDIR_PODER, ENGAJAMENTO_DOS_FUNCIONARIOS, REALIZACAO_DO_FUNCIONARIO, SAUDE_DO_FUNCIONARIO, RECONHECIMENTO_DOS_FUNCIONARIOS, EMPODERAR, ENCORAJAMENTO, ENTUSIASMO, EMPREENDEDORISMO, " +
-                                    "CONSCIENCIA_AMBIENTAL, IGUALDADE, EXCELENCIA, EXPERIENCIA, EXPLORACAO, IMPARCIALIDADE, ESTABILIDADE_FINANCEIRA, PERDAO, PREOCUPACAO_COM_FUTURAS_GERACOES, " +
-                                    "LIDERANCA_GLOBAL, ORIENTADO_PARA_OBJETIVOS, HIERARQUIA, PENSAMENTO_HOLISTICO, HONESTIDADE, DIREITOS_HUMANOS, HUMOR_ALEGRIA, CAPACIDADE_DE_INCLUSAO, RETER_INFORMACOES, COMPARTILHAR_INFORMACOES, " +
-                                    "INICIATIVA, INOVACAO, INTEGRIDADE, COMPETICAO_INTERNA, INSEGURANCA_DO_EMPREGO, DESENVOLVIMENTO_DA_LIDERANCA, LIDERANDO_PELO_EXEMPLO, ESCUTAR, TRABALHO_EXCESSIVO, PERSPECTIVA_DE_LONGO_PRAZO, " +
-                                    "FAZER_A_DIFERENCA, MANIPULACAO, FOCO_NA_MISSAO, COMUNICACAO_ABERTA, ABERTURA) " +
-                                    "VALUES(@SENSO_DE_DONO, @ATINGIR_OBJETIVOS, @ADAPTABILIDADE, @EQUILIBRIO, @SER_O_MELHOR, @CULPAR, @IMAGEM_DA_MARCA, @BUROCRACIA, @IMPORTAR_SE, @CAUTELA," +
+                Comm.CommandText = "INSERT INTO BARRETTVALUES VALUES(@SENSO_DE_DONO, @ATINGIR_OBJETIVOS, @ADAPTABILIDADE, @EQUILIBRIO, @SER_O_MELHOR, @CULPAR, @IMAGEM_DA_MARCA, @BUROCRACIA, @IMPORTAR_SE, @CAUTELA," +
                                     "@CLAREZA, @COACHING, @COMPROMETIMENTO, @ENVOLVIMENTO_COMUNITARIO, @COMPAIXAO, @SOLUCAO_DE_CONFLITOS, @CONFUSAO, @MELHORIA_CONTINUA, @APRENDIZAGEM_CONTINUA, @CONTROLE, " +
                                     "@COOPERACAO, @REDUCAO_DE_CUSTOS, @CORAGEM, @CRIATIVIDADE, @COLABORACAO_ENTRE_GRUPOS, @CURIOSIDADE, @COLABORACAO_COM_O_CLIENTE, @SATISFACAO_DO_CLIENTE, @CONFORTO_COM_INCERTEZAS, @EFICIENCIA, " +
                                     "@VALORIZANDO_A_DIVERSIDADE, @EXPANDIR_PODER, @ENGAJAMENTO_DOS_FUNCIONARIOS, @REALIZACAO_DO_FUNCIONARIO, @SAUDE_DO_FUNCIONARIO, @RECONHECIMENTO_DOS_FUNCIONARIOS, @EMPODERAR, @ENCORAJAMENTO, @ENTUSIASMO, @EMPREENDEDORISMO, " +
@@ -201,9 +196,11 @@ namespace SearchForm.Models.Infra
                     DatabaseConnection.Dispose();
                 }
             }
+
+            return Task.FromResult(true);
         }
 
-        private MySqlConnection conexaoBanco()
+        private MySqlConnection ConectarBanco()
         {
             const string Connection = "server=localhost;uid=root;pwd=1234;";
 
@@ -214,6 +211,7 @@ namespace SearchForm.Models.Infra
                 {
                     ConnectionString = Connection
                 };
+
                 connect.Open();
             }
             catch (MySqlException ex)

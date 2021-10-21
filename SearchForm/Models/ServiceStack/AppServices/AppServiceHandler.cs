@@ -3,6 +3,7 @@ using SearchForm.Models.QueryStack.Interface;
 using SearchForm.Models.QueryStack.ViewModels.Funcionario;
 using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
 using SearchForm.Models.ServiceStack.Interface;
+using System.Threading.Tasks;
 
 namespace SearchForm.Models.ServiceStack.AppServices
 {
@@ -17,9 +18,9 @@ namespace SearchForm.Models.ServiceStack.AppServices
             _repo = repo;
         }
 
-        public void SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa)
+        public Task<bool> SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa)
         {
-            _repo.SalvarPesquisa(dados, pesquisa);
+            return Task.FromResult(_repo.SalvarPesquisa(dados, pesquisa)).Result;
         }
 
         public bool VerificarCampos(DadosPesquisaViewModel dados)
@@ -145,7 +146,8 @@ namespace SearchForm.Models.ServiceStack.AppServices
         {
             return LetraAExpect + LetraAReal + LetraBExpect + LetraBReal + LetraCExpect + LetraCReal + LetraDExpect + LetraDReal;
         }
-        public object AdicionarDados(DadosPesquisaViewModel dados)
+
+        public DadosPesquisaViewModel AdicionarDados(DadosPesquisaViewModel dados)
         {
             DadosPesquisaViewModel dadosPesquisa = new DadosPesquisaViewModel()
             {

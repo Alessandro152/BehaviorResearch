@@ -1,10 +1,11 @@
 ﻿
 using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
+using System.Threading.Tasks;
 
 namespace SearchForm.Models.QueryStack.Interface
 {
     public interface IRepository
     {
-        void SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa);
+        Task<bool> SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa);
     }
 }

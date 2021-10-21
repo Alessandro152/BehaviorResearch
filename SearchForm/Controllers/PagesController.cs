@@ -1,14 +1,15 @@
 ﻿
+using Microsoft.AspNetCore.Mvc;
 using SearchForm.Models.QueryStack.ViewModels.Funcionario;
 using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
 using SearchForm.Models.ServiceStack.Interface;
+using SearchForm.Resources;
 using System.Web.Mvc;
 
 namespace SearchForm.Controllers.Principal
 {
     public class PagesController : Controller
     {
-        private const string ERRO = "Dados Incorretos. Lembre-se: Um unico campo nao pode ser maior que 100 e nem a soma dos quatro campos de expectativa ou realidade pode ser maior que 100";
         private readonly IAppServiceHandler _appServiceHandler;
 
         //Construtor do controller. Ele irá instanciar apenas uma vez o repositório
@@ -17,55 +18,58 @@ namespace SearchForm.Controllers.Principal
             _appServiceHandler = appServiceHandler;
         }
 
-        // GET: Home
-        public ActionResult Index()
+        public FuncionarioViewModel Colaborador { get; set; }
+
+        public DadosPesquisaViewModel Dados { get; set; }
+
+        [HttpGet]
+        public IActionResult Index()
         {
-            return View();
+            return (IActionResult)View();
         }
 
         [HttpPost]
-        public ActionResult SalvarDadosFuncionario(FuncionarioViewModel dados)
+        public IActionResult SalvarDadosFuncionario(FuncionarioViewModel dados)
         {
-            TempData["Funcionario"] = new FuncionarioViewModel()
+            Colaborador = new FuncionarioViewModel()
             {
                 Nome = dados.Nome,
                 Departamento = dados.Departamento,
                 Cargo = dados.Cargo
             };
 
-            return RedirectToAction("Pesquisa");
-        }
-
-        public ActionResult Pesquisa()
-        {
-            if(TempData["Funcionario"] != null) TempData.Keep("Funcionario");
-            return View("Page2");
+            return (IActionResult)View("ExpectReality");
         }
 
         [HttpPost]
-        public ActionResult SalvarPesquisa(DadosPesquisaViewModel dados)
+        public IActionResult SalvarPesquisa(DadosPesquisaViewModel dados)
         {
             bool HasSumError = _appServiceHandler.VerificarCampos(dados);           
 
             if (HasSumError)
             {
-                ViewBag.Alert = ERRO;
-                return View("Page2");
+                ViewBag.Alert = MessageResources.MensagemDadosIncorretos;
+                return (IActionResult)View("ExpectReality");
             }
             else
             {
-                dados.Funcionario = TempData["Funcionario"] as FuncionarioViewModel;
-                TempData["DadosPesquisa"] = _appServiceHandler.AdicionarDados(dados);
-                return View("BarrettValues");
+                dados.Funcionario = Colaborador;
+                Dados = _appServiceHandler.AdicionarDados(dados);
+                return (IActionResult)View("BarrettValues");
             }
         }
 
         [HttpPost]
-        public ActionResult Finalizar(BarrettValuesViewModel dados)
+        public IActionResult Finalizar(BarrettValuesViewModel dados)
         {
-            var pesquisa = TempData["DadosPesquisa"] as DadosPesquisaViewModel;
-            _appServiceHandler.SalvarPesquisa(dados, pesquisa);
-            return View("Finish");
+            var result = _appServiceHandler.SalvarPesquisa(dados, Dados).Result;
+
+            if (!result)
+            {
+                // TODO - Criar tela que não gravou as informacoes
+            }
+
+            return (IActionResult)View("Finish");
         }
     }
 }
