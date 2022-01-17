@@ -18,9 +18,9 @@ namespace SearchForm.Controllers.Principal
             _appServiceHandler = appServiceHandler;
         }
 
-        public FuncionarioViewModel Colaborador { get; set; }
+        public FuncionarioModel Colaborador { get; set; }
 
-        public DadosPesquisaViewModel Dados { get; set; }
+        public DadosPesquisaModel Dados { get; set; }
 
         [HttpGet]
         public IActionResult Index()
@@ -29,9 +29,9 @@ namespace SearchForm.Controllers.Principal
         }
 
         [HttpPost]
-        public IActionResult SalvarDadosFuncionario(FuncionarioViewModel dados)
+        public IActionResult SalvarDadosFuncionario(FuncionarioModel dados)
         {
-            Colaborador = new FuncionarioViewModel()
+            Colaborador = new FuncionarioModel()
             {
                 Nome = dados.Nome,
                 Departamento = dados.Departamento,
@@ -42,7 +42,7 @@ namespace SearchForm.Controllers.Principal
         }
 
         [HttpPost]
-        public IActionResult SalvarPesquisa(DadosPesquisaViewModel dados)
+        public IActionResult SalvarPesquisa(DadosPesquisaModel dados)
         {
             bool HasSumError = _appServiceHandler.VerificarCampos(dados);           
 

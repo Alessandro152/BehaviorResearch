@@ -1,7 +1,7 @@
 ﻿
-namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
+namespace SearchForm.Models.Entites.Pesquisa
 {
-    public class CriteriosDeSucessoViewModel
+    public class CriteriosDeSucessoModel
     {
         public string CS_LetraAExpect { get; set; }
         public string CS_LetraAReal { get; set; }

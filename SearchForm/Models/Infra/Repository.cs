@@ -13,7 +13,7 @@ namespace SearchForm.Models.Infra
 
         public MySqlConnection DatabaseConnection { get; private set; }
 
-        public Task<bool> SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa)
+        public Task<bool> SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaModel pesquisa)
         {
             try
             {

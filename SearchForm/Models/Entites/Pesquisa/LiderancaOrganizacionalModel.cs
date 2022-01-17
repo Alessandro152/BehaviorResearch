@@ -1,6 +1,6 @@
-﻿namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
+﻿namespace SearchForm.Models.Entites.Pesquisa
 {
-    public class LiderancaOrganizacionalViewModel
+    public class LiderancaOrganizacionalModel
     {
         public string LO_LetraAExpect { get; set; }
         public string LO_LetraAReal { get; set; }

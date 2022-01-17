@@ -1,7 +1,7 @@
 ﻿
-namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
+namespace SearchForm.Models.Entites.Pesquisa
 {
-    public class BarrettValuesViewModel
+    public class BarrettValuesModel
     {
         public bool SensoDeDono { get; set; }
         public bool Adaptabilidade { get; set; }
@@ -78,14 +78,5 @@ namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
         public bool FocoNaMissao { get; set; }
         public bool ComunicaoAberta { get; set; }
         public bool Abertura { get; set; }
-
-
-
-
-
-
-
-
-
     }
 }

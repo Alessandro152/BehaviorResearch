@@ -1,7 +1,6 @@
-﻿
-namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
+﻿namespace SearchForm.Models.Entites.Pesquisa
 {
-    public class EnfaseEstrategicaViewModel
+    public class EnfaseEstrategicaModel
     {
         public string EE_LetraAExpect { get; set; }
         public string EE_LetraAReal { get; set; }

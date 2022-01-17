@@ -3,6 +3,7 @@ using SearchForm.Models.QueryStack.Interface;
 using SearchForm.Models.QueryStack.ViewModels.Funcionario;
 using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
 using SearchForm.Models.ServiceStack.Interface;
+using System;
 using System.Threading.Tasks;
 
 namespace SearchForm.Models.ServiceStack.AppServices
@@ -18,21 +19,32 @@ namespace SearchForm.Models.ServiceStack.AppServices
             _repo = repo;
         }
 
-        public Task<bool> SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaViewModel pesquisa)
+        public Task<bool> SalvarPesquisa(BarrettValuesViewModel dados, DadosPesquisaModel pesquisa)
         {
             return Task.FromResult(_repo.SalvarPesquisa(dados, pesquisa)).Result;
         }
 
-        public bool VerificarCampos(DadosPesquisaViewModel dados)
+        public bool VerificarCampos(DadosPesquisaModel dados)
         {
-            int LetraAExpect, LetraAReal;
+            if (dados == null) return false;
+
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            int LetraAReal;
             int LetraBExpect, LetraBReal;
             int LetraCExpect, LetraCReal;
             int LetraDExpect, LetraDReal;
 
             if (dados.CaracteristicasDominantes != null)
             {
-                int.TryParse(dados.CaracteristicasDominantes.CD_LetraAExpect, out LetraAExpect);
+                int.TryParse(dados.CaracteristicasDominantes.CD_LetraAExpect, out int LetraAExpect);
                 int.TryParse(dados.CaracteristicasDominantes.CD_LetraAReal, out LetraAReal);
                 int.TryParse(dados.CaracteristicasDominantes.CD_LetraBExpect, out LetraBExpect);
                 int.TryParse(dados.CaracteristicasDominantes.CD_LetraBReal, out LetraBReal);
@@ -147,18 +159,18 @@ namespace SearchForm.Models.ServiceStack.AppServices
             return LetraAExpect + LetraAReal + LetraBExpect + LetraBReal + LetraCExpect + LetraCReal + LetraDExpect + LetraDReal;
         }
 
-        public DadosPesquisaViewModel AdicionarDados(DadosPesquisaViewModel dados)
+        public DadosPesquisaModel AdicionarDados(DadosPesquisaModel dados)
         {
-            DadosPesquisaViewModel dadosPesquisa = new DadosPesquisaViewModel()
+            DadosPesquisaModel dadosPesquisa = new DadosPesquisaModel()
             {
-                Funcionario = new FuncionarioViewModel
+                Funcionario = new FuncionarioModel
                 {
                     Nome = dados.Funcionario.Nome,
                     Departamento = dados.Funcionario.Departamento,
                     Cargo = dados.Funcionario.Cargo
                 },
 
-                CaracteristicasDominantes = new CaracteristicasDominantesViewModel
+                CaracteristicasDominantes = new CaracteristicasDominantesModel
                 {
                     CD_LetraAExpect = dados.CaracteristicasDominantes.CD_LetraAExpect,
                     CD_LetraAReal = dados.CaracteristicasDominantes.CD_LetraAReal,

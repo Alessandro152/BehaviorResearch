@@ -1,7 +1,6 @@
-﻿
-namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
+﻿namespace SearchForm.Models.Entites.Pesquisa
 {
-    public class ColagemDeOrganizacaoViewModel
+    public class ColagemDeOrganizacaoModel
     {
         public string CO_LetraAExpect { get; set; }
         public string CO_LetraAReal { get; set; }

@@ -182,31 +182,32 @@
     <Content Include="Views\Pages\ExpectReality.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Application\Services\ValidarCamposExpectRealityService.cs" />
     <Compile Include="Resources\MessageResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MessageResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Models\ServiceStack\AppServices\AppServiceHandler.cs" />
+    <Compile Include="Models\Application\AppServices\AppServiceHandler.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\PagesController.cs" />
-    <Compile Include="Models\QueryStack\Interface\IRepository.cs" />
+    <Compile Include="Models\Domain\Interface\IRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Infra\Repository.cs" />
-    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\BarrettValuesViewModel.cs" />
-    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\DadosPesquisaViewModel.cs" />
-    <Compile Include="Models\QueryStack\ViewModels\Funcionario\FuncionarioViewModel.cs" />
-    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\CaracteristicasDominantesViewModel.cs" />
-    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\ColagemDeOrganizacaoViewModel.cs" />
-    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\CriteriosDeSucessoViewModel.cs" />
-    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\EnfaseEstrategicaViewModel.cs" />
-    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\GestaoDeFuncionariosViewModel.cs" />
-    <Compile Include="Models\QueryStack\ViewModels\Pesquisa\LiderancaOrganizacionalViewModel.cs" />
-    <Compile Include="Models\ServiceStack\Interface\IAppServiceHandler.cs" />
+    <Compile Include="Models\Entites\Pesquisa\BarrettValuesModel.cs" />
+    <Compile Include="Models\Entites\Common\PesquisaModel.cs" />
+    <Compile Include="Models\Entites\Funcionario\FuncionarioModel.cs" />
+    <Compile Include="Models\Entites\Pesquisa\CaracteristicasDominantesModel.cs" />
+    <Compile Include="Models\Entites\Pesquisa\ColagemDeOrganizacaoModel.cs" />
+    <Compile Include="Models\Entites\Pesquisa\CriteriosDeSucessoModel.cs" />
+    <Compile Include="Models\Entites\Pesquisa\EnfaseEstrategicaModel.cs" />
+    <Compile Include="Models\Entites\Pesquisa\GestaoDeFuncionariosModel.cs" />
+    <Compile Include="Models\Entites\Pesquisa\LiderancaOrganizacionalModel.cs" />
+    <Compile Include="Models\Application\Interface\IAppServiceHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -229,6 +230,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Domain\Commands\" />
+    <Folder Include="Models\Domain\Handlers\" />
+    <Folder Include="Models\Domain\Validations\" />
     <Folder Include="Models\Images\" />
   </ItemGroup>
   <ItemGroup>

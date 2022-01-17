@@ -1,7 +1,6 @@
-﻿
-namespace SearchForm.Models.QueryStack.ViewModels.Pesquisa
+﻿namespace SearchForm.Models.Entites.Pesquisa
 {
-    public class GestaoDeFuncionariosViewModel
+    public class GestaoDeFuncionariosModel
     {
         public string GF_LetraAExpect { get; set; }
         public string GF_LetraAReal { get; set; }
