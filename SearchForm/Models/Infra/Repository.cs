@@ -6,8 +6,8 @@
     using System;
     using System.Data;
     using System.Threading.Tasks;
-    using System.Configuration;
     using Microsoft.Extensions.Configuration;
+    using SearchForm.Models.Domain.Commands.Funcionario;
 
     public class Repository : IRepository
     {
@@ -17,14 +17,18 @@
         public Repository(IConfiguration configuration)
         {
             _configuration = configuration;
+            _databaseConnection = ConectarBanco();
+        }
+
+        public Task<bool> AddFuncionario(FuncionarioCommand message)
+        {
+            throw new NotImplementedException();
         }
 
         public Task<bool> SalvarPesquisa(PesquisaModel pesquisa)
         {
             try
             {
-                _databaseConnection = ConectarBanco();
-
                 if (_databaseConnection.State != ConnectionState.Open) return Task.FromResult(false);
 
                 var commandSql = _databaseConnection.CreateCommand();
@@ -37,7 +41,6 @@
                 commandSql.Parameters.AddWithValue("@DEPARTAMENTO", pesquisa.Departamento);
                 commandSql.Parameters.AddWithValue("@CARGO", pesquisa.Cargo);
                 commandSql.ExecuteNonQuery();
-                commandSql.Parameters.Clear();
 
                 commandSql.CommandText = "INSERT INTO CARACTERISTICASDOMINANTES VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
                 commandSql.Parameters.AddWithValue("@CD_A_EXPECT", pesquisa.CaracteristicasDominantes.CD_LetraAExpect);

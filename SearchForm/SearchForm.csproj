@@ -190,6 +190,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Application\Services\ValidarCamposExpectRealityService.cs" />
+    <Compile Include="Models\Domain\Commands\Funcionario\FuncionarioCommand.cs" />
+    <Compile Include="Models\Domain\Common\Command.cs" />
+    <Compile Include="Models\Domain\Handlers\Funcionario\FuncionarioHandler.cs" />
+    <Compile Include="Models\Domain\Interface\IHandler.cs" />
     <Compile Include="Models\Entites\Error.cs" />
     <Compile Include="Resources\MessageResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -238,8 +242,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\Domain\Commands\" />
-    <Folder Include="Models\Domain\Handlers\" />
     <Folder Include="Models\Domain\Validations\" />
     <Folder Include="Models\Images\" />
   </ItemGroup>
