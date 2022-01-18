@@ -1,15 +1,16 @@
-﻿using System.Web.Mvc;
-using System.Web.Routing;
-
-namespace SearchForm
+﻿namespace SearchForm
 {
-    public class MvcApplication : System.Web.HttpApplication
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.Routing;
+
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            UnityConfig.RegistraComponentes();
+            UnityConfig.RegisterTypes(UnityConfig.Container);
         }
     }
 }

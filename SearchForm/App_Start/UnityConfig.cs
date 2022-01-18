@@ -46,15 +46,16 @@ namespace SearchForm
             // container.LoadConfiguration();
 
             // TODO: Register your type's mappings here.
-            // container.RegisterType<IProductRepository, ProductRepository>();
-        }
-
-        public static void RegistraComponentes()
-        {
-            var container = new UnityContainer();
             container.RegisterType<IAppServiceHandler, AppServiceHandler>();
             container.RegisterType<IRepository, Repository>();
-            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
+
+        //public static void RegistrarComponentes()
+        //{
+        //    var container = new UnityContainer();
+        //    container.RegisterType<IAppServiceHandler, AppServiceHandler>();
+        //    container.RegisterType<IRepository, Repository>();
+        //    DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+        //}
     }
 }

@@ -3,11 +3,9 @@
     using SearchForm.Models.Entites.Funcionario;
     using SearchForm.Models.Entites.Pesquisa;
 
-    public class PesquisaModel
+    public class PesquisaModel : FuncionarioModel
     {
-        public FuncionarioModel FuncionarioModel { get; set; }
-
-        public CaracteristicasDominantesModel CaracteristicasDominantesModel { get; set; }
+        public CaracteristicasDominantesModel CaracteristicasDominantes { get; set; }
 
         public LiderancaOrganizacionalModel LiderancaOrganizacional { get; set; }
 

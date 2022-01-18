@@ -1,75 +1,68 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
-using SearchForm.Models.QueryStack.ViewModels.Funcionario;
-using SearchForm.Models.QueryStack.ViewModels.Pesquisa;
-using SearchForm.Models.ServiceStack.Interface;
-using SearchForm.Resources;
-using System.Web.Mvc;
-
-namespace SearchForm.Controllers.Principal
+﻿namespace SearchForm.Controllers.Principal
 {
+    using SearchForm.Models.Entites.Funcionario;
+    using SearchForm.Models.Entites.Common;
+    using System.Web.Mvc;
+    using SearchForm.Models.Entites.Pesquisa;
+    using SearchForm.Models.Application.Interface;
+
     public class PagesController : Controller
     {
-        private readonly IAppServiceHandler _appServiceHandler;
+        private readonly IPesquisaAppService _pesquisaAppService;
 
-        //Construtor do controller. Ele irá instanciar apenas uma vez o repositório
-        public PagesController(IAppServiceHandler appServiceHandler)
+        public PagesController(IPesquisaAppService appServiceHandler)
         {
-            _appServiceHandler = appServiceHandler;
+            _pesquisaAppService = appServiceHandler;
         }
 
-        public FuncionarioModel Colaborador { get; set; }
+        public FuncionarioModel Funcionario { get; set; }
 
-        public DadosPesquisaModel Dados { get; set; }
+        public PesquisaModel DadosPesquisa { get; set; }
 
         [HttpGet]
-        public IActionResult Index()
+        public ActionResult Index()
         {
-            return (IActionResult)View();
+            return View();
         }
 
         [HttpPost]
-        public IActionResult SalvarDadosFuncionario(FuncionarioModel dados)
+        public ActionResult InicializarPaginaExpectReality(FuncionarioModel dados)
         {
-            Colaborador = new FuncionarioModel()
-            {
-                Nome = dados.Nome,
-                Departamento = dados.Departamento,
-                Cargo = dados.Cargo
-            };
+            if (dados == null) return View();
 
-            return (IActionResult)View("ExpectReality");
+            Funcionario = dados;
+
+            return View("ExpectReality");
         }
 
         [HttpPost]
-        public IActionResult SalvarPesquisa(DadosPesquisaModel dados)
+        public ActionResult InicializarPaginaBarrettValues(PesquisaModel pesquisaValues)
         {
-            bool HasSumError = _appServiceHandler.VerificarCampos(dados);           
+            if (pesquisaValues == null) return View();
 
-            if (HasSumError)
-            {
-                ViewBag.Alert = MessageResources.MensagemDadosIncorretos;
-                return (IActionResult)View("ExpectReality");
-            }
-            else
-            {
-                dados.Funcionario = Colaborador;
-                Dados = _appServiceHandler.AdicionarDados(dados);
-                return (IActionResult)View("BarrettValues");
-            }
+            DadosPesquisa.Nome = Funcionario.Nome;
+            DadosPesquisa.Cargo = Funcionario.Cargo;
+            DadosPesquisa.Departamento = Funcionario.Departamento;
+            DadosPesquisa = pesquisaValues;
+
+            return View("BarrettValues");
         }
 
         [HttpPost]
-        public IActionResult Finalizar(BarrettValuesViewModel dados)
+        public ActionResult FinalizarPesquisa(BarrettValuesModel barrettValues)
         {
-            var result = _appServiceHandler.SalvarPesquisa(dados, Dados).Result;
+            if (barrettValues == null) return View();
+
+            DadosPesquisa.BarrettValues = barrettValues;
+
+            var result = _pesquisaAppService.SalvarPesquisa(DadosPesquisa).Result;
 
             if (!result)
             {
                 // TODO - Criar tela que não gravou as informacoes
             }
 
-            return (IActionResult)View("Finish");
+            return View("Finish");
         }
     }
 }
