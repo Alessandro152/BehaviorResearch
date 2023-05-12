@@ -1,7 +1,5 @@
 ﻿namespace SearchForm.Models.Domain.Handlers.Funcionario
 {
-    using SearchForm.Models.Domain.Commands.Funcionario;
-    using SearchForm.Models.Domain.Interface;
     using System;
     using System.Threading.Tasks;
 
