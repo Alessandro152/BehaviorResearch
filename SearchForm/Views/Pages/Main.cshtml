@@ -1,4 +1,4 @@
-﻿@model SearchForm.Models.Entites.Funcionario.FuncionarioModel
+﻿@model SearchForm.Models.Application.ViewModels.FuncionarioViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -8,7 +8,7 @@
     <h3>Olá, seja bem-vindo!! preencha seus dados abaixo antes de iniciar a pesquisa</h3>
     <fieldset class="box">
         <div>
-            @using (Html.BeginForm("SalvarDadosFuncionario", "Pages", FormMethod.Post))
+            @using (Html.BeginForm("SalvarDadosFuncionario", "pesquisas/funcionario", FormMethod.Post))
             {
                 @Html.TextBoxFor(m => m.Nome, new { @class = "name", @required = "required", placeholder = "Nome Completo", autocomplete = "off" })
                 @Html.TextBoxFor(m => m.Departamento, new { @class = "department", @required = "required", placeholder = "Departamento / Àrea", autocomplete = "off" })
